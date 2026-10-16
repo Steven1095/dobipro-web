@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dobi · Portafolio de Servicios 2026</title>
+  <meta name="description" content="Portafolio de Servicios 2026 · dobi Creadores de Valor" />
+  <meta name="theme-color" content="#07070B" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="dobi · Portafolio de Servicios 2026" />
+  <meta property="og:description" content="Tu aliado para el crecimiento de tu organización." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/slides/slide-01.jpg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          },
+          colors: {
+            dobi: {
+              orange: '#F58220',
+              amber: '#FF9F38',
+              dark: '#07070B',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(245, 130, 32, 0.14) 0%, transparent 45%),
+        radial-gradient(circle at 15% 80%, rgba(245, 130, 32, 0.08) 0%, transparent 45%),
+        #07070B;
+      color: #F4F4F6;
+    }
+
+    .filmstrip-scroll::-webkit-scrollbar {
+      height: 5px;
+    }
+    .filmstrip-scroll::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 999px;
+    }
+    .filmstrip-scroll::-webkit-scrollbar-thumb {
+      background: rgba(245, 130, 32, 0.45);
+      border-radius: 999px;
+    }
+    .filmstrip-scroll::-webkit-scrollbar-thumb:hover {
+      background: rgba(245, 130, 32, 0.8);
+    }
+
+    .slide-fade {
+      transition: opacity 0.22s ease, transform 0.22s ease;
+    }
+
+    .btn-orange {
+      background: linear-gradient(135deg, #FF9E38 0%, #F58220 55%, #DF6806 100%);
+      box-shadow: 0 8px 24px -4px rgba(245, 130, 32, 0.45);
+      transition: all 0.2s ease;
+    }
+    .btn-orange:hover {
+      filter: brightness(1.06);
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body class="h-screen w-screen overflow-hidden flex flex-col select-none antialiased">
+
+  <!-- TOP HEADER / TOOLBAR -->
+  <header class="h-16 shrink-0 px-4 sm:px-6 border-b border-white/10 bg-[#0A0B10]/90 backdrop-blur-xl flex items-center justify-between gap-3 z-30">
+    <!-- Left: Brand Logo & Slide Title -->
+    <div class="flex items-center gap-3 sm:gap-5 min-w-0">
+      <div class="flex items-center gap-2.5 shrink-0">
+        <svg class="w-9 h-9" viewBox="0 0 64 64" fill="none">
+          <circle cx="30" cy="34" r="20" fill="url(#dobiGrad)" />
+          <circle cx="48" cy="17" r="7.5" fill="url(#dobiGrad)" />
+          <path d="M8 22 C16 14, 46 28, 56 44 C42 46, 14 34, 8 22 Z" stroke="#9CA3AF" stroke-width="2.2" fill="none" opacity="0.65" />
+          <defs>
+            <linearGradient id="dobiGrad" x1="10" y1="14" x2="50" y2="54" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FFB347" />
+              <stop offset="0.6" stop-color="#F58220" />
+              <stop offset="1" stop-color="#C85A00" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="leading-none">
+          <div class="font-display text-xl font-bold tracking-tight">
+            <span class="text-white">dob</span><span class="text-dobi-orange">i</span>
+          </div>
+          <div class="text-[8px] uppercase tracking-[0.2em] text-zinc-400 border-t border-dobi-orange/60 pt-0.5">
+            Creadores de Valor
+          </div>
+        </div>
+      </div>
+
+      <div class="h-6 w-px bg-white/10 hidden sm:block"></div>
+
+      <!-- Current Slide Indicator -->
+      <div class="flex items-center gap-2.5 min-w-0">
+        <span id="slide-badge" class="px-2.5 py-1 rounded-md bg-dobi-orange text-black font-display font-bold text-xs shrink-0">
+          01 / 13
+        </span>
+        <span id="slide-title" class="font-display text-xs sm:text-sm font-semibold text-zinc-200 truncate hidden md:inline">
+          Portada · Portafolio de Servicios 2026
+        </span>
+      </div>
+    </div>
+
+    <!-- Right: Mode Switcher, Fullscreen & Download -->
+    <div class="flex items-center gap-2 shrink-0">
+      <!-- Mode Switcher -->
+      <div class="inline-flex rounded-xl bg-black/70 p-1 border border-white/10">
+        <button
+          id="btn-mode-deck"
+          onclick="setViewerMode('deck')"
+          class="px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 bg-dobi-orange text-black transition-all"
+        >
+          <i data-lucide="monitor-play" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">Presentación</span>
+        </button>
+        <button
+          id="btn-mode-grid"
+          onclick="setViewerMode('grid')"
+          class="px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 text-zinc-300 hover:text-white transition-all"
+        >
+          <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">Cuadrícula</span>
+        </button>
+        <button
+          id="btn-mode-pdf"
+          onclick="setViewerMode('pdf')"
+          class="px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 text-zinc-300 hover:text-white transition-all"
+        >
+          <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">PDF Nativo</span>
+        </button>
+      </div>
+
+      <!-- Zoom Toggle (Deck Mode) -->
+      <button
+        id="btn-thumbs"
+        onclick="toggleFilmstrip()"
+        title="Mostrar/Ocultar miniaturas"
+        class="p-2 rounded-xl bg-white/5 hover:bg-white/15 border border-white/10 text-zinc-200 transition-all hidden sm:flex items-center justify-center"
+      >
+        <i data-lucide="panel-bottom" class="w-4 h-4"></i>
+      </button>
+
+      <!-- Fullscreen Button -->
+      <button
+        onclick="toggleFullscreen()"
+        title="Pantalla Completa"
+        class="p-2 rounded-xl bg-white/5 hover:bg-white/15 border border-white/10 text-zinc-200 transition-all flex items-center justify-center"
+      >
+        <i data-lucide="maximize-2" class="w-4 h-4"></i>
+      </button>
+
+      <!-- Download PDF Button -->
+      <a
+        href="Portafolio%20Dobi%202026.pdf"
+        download="Portafolio-Dobi-2026.pdf"
+        class="btn-orange inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-black text-xs font-bold"
+      >
+        <i data-lucide="download" class="w-3.5 h-3.5 stroke-[2.5]"></i>
+        <span class="hidden sm:inline">Descargar PDF</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- PROGRESS BAR -->
+  <div class="h-0.5 w-full bg-white/10 shrink-0 z-30">
+    <div id="slide-progress" class="h-full bg-gradient-to-r from-dobi-orange to-dobi-amber transition-all duration-300" style="width: 7.69%"></div>
+  </div>
+
+  <!-- MAIN VIEWPORT AREA -->
+  <main class="flex-1 min-h-0 relative flex flex-col">
+
+    <!-- MODE 1: INTERACTIVE SLIDE DECK -->
+    <div id="view-deck" class="flex-1 min-h-0 flex flex-col">
+      <!-- Slide Stage -->
+      <div class="flex-1 min-h-0 relative flex items-center justify-center p-2 sm:p-5 overflow-hidden">
+        <!-- Prev Button -->
+        <button
+          onclick="prevSlide()"
+          aria-label="Anterior"
+          class="absolute left-3 sm:left-6 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/75 hover:bg-dobi-orange text-white hover:text-black border border-white/15 flex items-center justify-center transition-all shadow-xl backdrop-blur-md"
+        >
+          <i data-lucide="chevron-left" class="w-6 h-6"></i>
+        </button>
+
+        <!-- Active Slide -->
+        <img
+          id="active-slide-img"
+          src="assets/slides/slide-01.jpg"
+          alt="Portafolio Dobi 2026 - Diapositiva 1"
+          onclick="nextSlide()"
+          class="slide-fade max-h-full max-w-full w-auto h-auto object-contain rounded-xl shadow-[0_20px_70px_rgba(0,0,0,0.95)] border border-white/10 cursor-pointer"
+        />
+
+        <!-- Next Button -->
+        <button
+          onclick="nextSlide()"
+          aria-label="Siguiente"
+          class="absolute right-3 sm:right-6 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/75 hover:bg-dobi-orange text-white hover:text-black border border-white/15 flex items-center justify-center transition-all shadow-xl backdrop-blur-md"
+        >
+          <i data-lucide="chevron-right" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Bottom Filmstrip Bar -->
+      <div id="filmstrip-bar" class="shrink-0 px-4 py-2.5 bg-[#0A0B10]/95 border-t border-white/10 transition-all">
+        <div id="filmstrip" class="filmstrip-scroll flex items-center gap-2.5 overflow-x-auto pb-1">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- MODE 2: 13-SLIDE GRID VIEW -->
+    <div id="view-grid" class="hidden flex-1 min-h-0 overflow-y-auto p-6 sm:p-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-5 flex items-center justify-between">
+          <div>
+            <h2 class="font-display text-lg font-bold text-white">Todas las diapositivas (13 páginas)</h2>
+            <p class="text-xs text-zinc-400">Haz clic en cualquier página para verla en pantalla completa</p>
+          </div>
+        </div>
+        <div id="slides-grid-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 pb-10">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- MODE 3: NATIVE PDF VIEW -->
+    <div id="view-pdf" class="hidden flex-1 min-h-0 w-full h-full">
+      <iframe
+        src="Portafolio%20Dobi%202026.pdf#toolbar=1&navpanes=0&view=FitH"
+        class="w-full h-full border-0"
+        title="Portafolio Dobi 2026 PDF"
+      ></iframe>
+    </div>
+
+  </main>
+
+  <script>
+    const SLIDES = [
+      { id: 1, title: "Portada · Portafolio de Servicios 2026", tag: "Portada" },
+      { id: 2, title: "Quiénes Somos & Nuestro Propósito", tag: "Nosotros" },
+      { id: 3, title: "Quién Lidera · Mario Duque", tag: "Liderazgo" },
+      { id: 4, title: "Nuestros Servicios · 4 Frentes de Crecimiento", tag: "Servicios" },
+      { id: 5, title: "01 · Marketing Estratégico", tag: "01 Marketing" },
+      { id: 6, title: "02 · Estrategia Comercial (IA & DATA)", tag: "02 Comercial" },
+      { id: 7, title: "03 · Talleres y Capacitaciones", tag: "03 Talleres" },
+      { id: 8, title: "04 · Conferencias que Inspiran y Movilizan", tag: "04 Conferencias" },
+      { id: 9, title: "Experiencia en Escenario · Así se vive dobi", tag: "Escenario" },
+      { id: 10, title: "Clientes · +100 Empresas Confían en Nosotros", tag: "Clientes" },
+      { id: 11, title: "Por Qué dobi · Creadores de Valor", tag: "Por qué dobi" },
+      { id: 12, title: "Cobertura LATAM · Donde estés, allí estamos", tag: "Cobertura" },
+      { id: 13, title: "Contáctanos · Hablemos de tu organización", tag: "Contacto" }
+    ];
+
+    let currentSlide = 1;
+    let currentMode = 'deck';
+    let filmstripVisible = true;
+
+    function pad(num) {
+      return String(num).padStart(2, '0');
+    }
+
+    function getSlideUrl(index) {
+      return `assets/slides/slide-${pad(index)}.jpg`;
+    }
+
+    function renderFilmstrip() {
+      const filmstrip = document.getElementById('filmstrip');
+      filmstrip.innerHTML = SLIDES.map((s) => {
+        const active = s.id === currentSlide;
+        return `
+          <button
+            id="thumb-${s.id}"
+            onclick="goToSlide(${s.id})"
+            class="group relative shrink-0 w-24 sm:w-32 rounded-lg overflow-hidden border transition-all text-left ${
+              active
+                ? 'border-dobi-orange ring-2 ring-dobi-orange/50 scale-[1.02]'
+                : 'border-white/10 opacity-55 hover:opacity-100 hover:border-white/30'
+            }"
+          >
+            <img src="${getSlideUrl(s.id)}" alt="${s.title}" class="w-full h-14 sm:h-16 object-cover" loading="lazy" />
+            <div class="px-2 py-0.5 bg-black/90 flex items-center justify-between text-[10px]">
+              <span class="font-bold ${active ? 'text-dobi-orange' : 'text-zinc-400'}">${pad(s.id)}</span>
+              <span class="truncate text-zinc-300 ml-1">${s.tag}</span>
+            </div>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function renderGrid() {
+      const grid = document.getElementById('slides-grid-container');
+      grid.innerHTML = SLIDES.map((s) => `
+        <div
+          onclick="selectFromGrid(${s.id})"
+          class="group cursor-pointer rounded-2xl overflow-hidden border border-white/10 hover:border-dobi-orange bg-black/60 transition-all hover:-translate-y-1 shadow-lg"
+        >
+          <div class="relative overflow-hidden">
+            <img src="${getSlideUrl(s.id)}" alt="${s.title}" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+            <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-md bg-black/80 border border-white/15 font-display font-bold text-xs text-dobi-orange">
+              ${pad(s.id)}
+            </span>
+          </div>
+          <div class="p-3 flex items-center justify-between">
+            <span class="text-xs font-medium text-zinc-200 group-hover:text-white truncate">${s.title}</span>
+            <i data-lucide="maximize-2" class="w-3.5 h-3.5 text-dobi-orange shrink-0 ml-2"></i>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    function goToSlide(index) {
+      if (index < 1) index = SLIDES.length;
+      if (index > SLIDES.length) index = 1;
+      currentSlide = index;
+
+      const slideObj = SLIDES[currentSlide - 1];
+      const imgEl = document.getElementById('active-slide-img');
+      imgEl.style.opacity = '0.3';
+
+      setTimeout(() => {
+        imgEl.src = getSlideUrl(currentSlide);
+        imgEl.alt = slideObj.title;
+        imgEl.style.opacity = '1';
+      }, 80);
+
+      document.getElementById('slide-badge').textContent = `${pad(currentSlide)} / ${pad(SLIDES.length)}`;
+      document.getElementById('slide-title').textContent = slideObj.title;
+      document.getElementById('slide-progress').style.width = `${(currentSlide / SLIDES.length) * 100}%`;
+
+      renderFilmstrip();
+
+      const activeThumb = document.getElementById(`thumb-${currentSlide}`);
+      if (activeThumb) {
+        activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    }
+
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentSlide - 1);
+    }
+
+    function toggleFilmstrip() {
+      filmstripVisible = !filmstripVisible;
+      document.getElementById('filmstrip-bar').classList.toggle('hidden', !filmstripVisible);
+    }
+
+    function setViewerMode(mode) {
+      currentMode = mode;
+      document.getElementById('view-deck').classList.toggle('hidden', mode !== 'deck');
+      document.getElementById('view-grid').classList.toggle('hidden', mode !== 'grid');
+      document.getElementById('view-pdf').classList.toggle('hidden', mode !== 'pdf');
+
+      const modes = ['deck', 'grid', 'pdf'];
+      modes.forEach((m) => {
+        const btn = document.getElementById(`btn-mode-${m}`);
+        if (m === mode) {
+          btn.className = 'px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 bg-dobi-orange text-black transition-all';
+        } else {
+          btn.className = 'px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 text-zinc-300 hover:text-white transition-all';
+        }
+      });
+    }
+
+    function selectFromGrid(index) {
+      setViewerMode('deck');
+      goToSlide(index);
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (currentMode !== 'deck') return;
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        nextSlide();
+      }
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevSlide();
+      }
+    });
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      renderFilmstrip();
+      renderGrid();
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

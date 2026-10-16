@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dobi · Creadores de Valor | Portafolio de Servicios 2026</title>
+  <meta name="description" content="Tu aliado para el crecimiento de tu organización. Marketing estratégico, Estrategia comercial con IA & BI, Formación comercial y Conferencias en LATAM." />
+  <meta name="theme-color" content="#08080c" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="dobi · Creadores de Valor | Portafolio de Servicios 2026" />
+  <meta property="og:description" content="Expertos en marketing estratégico, estrategia comercial, formación de equipos y conferencias para el crecimiento de tu organización." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/slides/slide-01.jpg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          },
+          colors: {
+            dobi: {
+              orange: '#F58220',
+              amber: '#FF9F38',
+              deep: '#D96508',
+              dark: '#07070B',
+              card: '#111218',
+              border: '#222430'
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --dobi-orange: #F58220;
+      --dobi-amber: #FF9F38;
+      --bg-dark: #07070B;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: #F4F4F6;
+      overflow-x: hidden;
+    }
+
+    /* Cosmic background & orbital rings inspired by the PDF cover */
+    .cosmic-bg {
+      background:
+        radial-gradient(circle at 82% 38%, rgba(245, 130, 32, 0.22) 0%, rgba(217, 101, 8, 0.08) 28%, transparent 60%),
+        radial-gradient(circle at 15% 20%, rgba(245, 130, 32, 0.08) 0%, transparent 45%),
+        linear-gradient(180deg, #07070B 0%, #0C0D14 50%, #07070B 100%);
+    }
+
+    .orbital-planet {
+      background: radial-gradient(circle at 35% 30%, #FFAE42 0%, #F58220 45%, #B85000 85%, #5E2600 100%);
+      box-shadow:
+        0 0 90px rgba(245, 130, 32, 0.35),
+        inset -25px -25px 50px rgba(0, 0, 0, 0.55);
+    }
+
+    .orbital-moon {
+      background: radial-gradient(circle at 35% 30%, #FFB85C 0%, #F58220 60%, #9E4400 100%);
+      box-shadow: 0 0 35px rgba(245, 130, 32, 0.45);
+    }
+
+    .glass-panel {
+      background: rgba(17, 18, 24, 0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .glass-panel-orange {
+      background: linear-gradient(135deg, rgba(245, 130, 32, 0.14) 0%, rgba(17, 18, 24, 0.85) 100%);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(245, 130, 32, 0.32);
+    }
+
+    .text-gradient-orange {
+      background: linear-gradient(95deg, #FFB357 0%, #F58220 55%, #FF6B00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .btn-orange {
+      background: linear-gradient(135deg, #FF9E38 0%, #F58220 55%, #DF6806 100%);
+      box-shadow: 0 10px 30px -5px rgba(245, 130, 32, 0.45);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-orange:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 38px -5px rgba(245, 130, 32, 0.65);
+      filter: brightness(1.05);
+    }
+
+    /* Custom Scrollbar for Filmstrip */
+    .filmstrip-scroll::-webkit-scrollbar {
+      height: 6px;
+    }
+    .filmstrip-scroll::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 999px;
+    }
+    .filmstrip-scroll::-webkit-scrollbar-thumb {
+      background: rgba(245, 130, 32, 0.45);
+      border-radius: 999px;
+    }
+    .filmstrip-scroll::-webkit-scrollbar-thumb:hover {
+      background: rgba(245, 130, 32, 0.8);
+    }
+
+    /* Slide transition */
+    .slide-fade {
+      transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(1deg); }
+    }
+
+    .animate-float {
+      animation: floatSlow 9s ease-in-out infinite;
+    }
+
+    /* Fullscreen adjustments */
+    #viewer-container:fullscreen {
+      background: #050508;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 0;
+    }
+    #viewer-container:fullscreen #slide-stage {
+      height: calc(100vh - 165px);
+      max-height: none;
+    }
+  </style>
+</head>
+<body class="cosmic-bg antialiased selection:bg-dobi-orange selection:text-black">
+
+  <!-- Decorative Starfield / Orbital SVG Background -->
+  <div class="pointer-events-none fixed inset-0 overflow-hidden z-0 opacity-60">
+    <svg class="absolute -right-24 top-10 w-[850px] h-[850px] text-dobi-orange/15 animate-float" viewBox="0 0 800 800" fill="none">
+      <ellipse cx="400" cy="400" rx="370" ry="140" transform="rotate(-22 400 400)" stroke="currentColor" stroke-width="1.2" />
+      <ellipse cx="400" cy="400" rx="310" ry="110" transform="rotate(-15 400 400)" stroke="currentColor" stroke-width="0.8" stroke-dasharray="6 8" />
+      <ellipse cx="400" cy="400" rx="430" ry="175" transform="rotate(-28 400 400)" stroke="currentColor" stroke-width="0.6" />
+    </svg>
+  </div>
+
+  <!-- Top Navigation -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-[#07070B]/85 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Brand Logo (recreated faithfully from PDF) -->
+      <a href="#" class="flex items-center gap-3.5 group">
+        <div class="relative w-11 h-11 flex items-center justify-center">
+          <!-- Orbital ring SVG -->
+          <svg class="w-11 h-11 viewBox="0 0 64 64" viewBox="0 0 64 64" fill="none">
+            <circle cx="30" cy="34" r="20" fill="url(#dobiGrad)" />
+            <circle cx="48" cy="17" r="7.5" fill="url(#dobiGrad)" />
+            <path d="M8 22 C16 14, 46 28, 56 44 C42 46, 14 34, 8 22 Z" stroke="#9CA3AF" stroke-width="2.2" fill="none" opacity="0.65" />
+            <defs>
+              <linearGradient id="dobiGrad" x1="10" y1="14" x2="50" y2="54" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FFB347" />
+                <stop offset="0.6" stop-color="#F58220" />
+                <stop offset="1" stop-color="#C85A00" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-baseline tracking-tight">
+            <span class="font-display text-2xl font-bold text-white">dob</span>
+            <span class="font-display text-2xl font-bold text-dobi-orange">i</span>
+          </div>
+          <span class="text-[10px] uppercase tracking-[0.22em] text-zinc-400 -mt-1 border-t border-dobi-orange/60 pt-0.5">
+            Creadores de Valor
+          </span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-300">
+        <a href="#portafolio-interactivo" class="hover:text-dobi-orange transition-colors flex items-center gap-1.5">
+          <i data-lucide="presentation" class="w-4 h-4 text-dobi-orange"></i>
+          Portafolio 2026
+        </a>
+        <a href="#servicios" class="hover:text-dobi-orange transition-colors">4 Frentes de Servicio</a>
+        <a href="#liderazgo" class="hover:text-dobi-orange transition-colors">Quién Lidera</a>
+        <a href="#clientes" class="hover:text-dobi-orange transition-colors">Clientes & Impacto</a>
+        <a href="#contacto" class="hover:text-dobi-orange transition-colors">Contacto</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3">
+        <a
+          href="Portafolio%20Dobi%202026.pdf"
+          download="Portafolio-Dobi-2026.pdf"
+          class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-white/15 bg-white/5 hover:bg-white/10 hover:border-dobi-orange/50 text-white transition-all"
+        >
+          <i data-lucide="download" class="w-4 h-4 text-dobi-orange"></i>
+          Descargar PDF
+        </a>
+        <a
+          href="https://wa.me/573206924074?text=Hola%20Mario,%20acabo%20de%20ver%20el%20Portafolio%20de%20Servicios%202026%20en%20dobipro.com%20y%20me%20gustar%C3%ADa%20conversar%20sobre%20mi%20organizaci%C3%B3n."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-orange inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-black"
+        >
+          <i data-lucide="message-circle" class="w-4 h-4 fill-black"></i>
+          <span>Hablemos</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative z-10 pt-10 pb-8 lg:pt-14 lg:pb-12 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        <!-- Left Column: Executive Pitch -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-dobi-orange/10 border border-dobi-orange/30 text-dobi-amber text-xs font-semibold uppercase tracking-[0.2em]">
+            <span class="w-2 h-2 rounded-full bg-dobi-orange animate-ping"></span>
+            Portafolio de Servicios 2026
+          </div>
+
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] text-white">
+            Tu aliado para el <span class="text-gradient-orange">crecimiento</span> de tu organización.
+          </h1>
+
+          <p class="text-base sm:text-lg text-zinc-300 max-w-2xl leading-relaxed font-light">
+            En <strong class="text-white font-semibold">dobi</strong> somos un grupo de expertos apasionados por el marketing, las ventas y el liderazgo. Aportamos valor real para incrementar tus ventas, maximizar la rentabilidad y asegurar la sostenibilidad de tu negocio en <strong class="text-dobi-amber font-medium">toda LATAM</strong>.
+          </p>
+
+          <!-- 4 Pillars Pills -->
+          <div class="flex flex-wrap gap-2 pt-1">
+            <span class="px-3.5 py-1.5 rounded-lg bg-white/[0.04] border border-white/10 text-xs sm:text-sm text-zinc-200 flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-dobi-orange"></span> Marketing estratégico
+            </span>
+            <span class="px-3.5 py-1.5 rounded-lg bg-white/[0.04] border border-white/10 text-xs sm:text-sm text-zinc-200 flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-dobi-orange"></span> Estrategia comercial + IA
+            </span>
+            <span class="px-3.5 py-1.5 rounded-lg bg-white/[0.04] border border-white/10 text-xs sm:text-sm text-zinc-200 flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-dobi-orange"></span> Formación comercial
+            </span>
+            <span class="px-3.5 py-1.5 rounded-lg bg-white/[0.04] border border-white/10 text-xs sm:text-sm text-zinc-200 flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-dobi-orange"></span> Conferencias
+            </span>
+          </div>
+
+          <!-- Primary CTAs -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href="#portafolio-interactivo"
+              class="btn-orange inline-flex items-center gap-3 px-7 py-4 rounded-full text-sm sm:text-base font-bold text-black"
+            >
+              <i data-lucide="play-circle" class="w-5 h-5"></i>
+              Explorar Presentación Interactiva
+            </a>
+            <a
+              href="Portafolio%20Dobi%202026.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2.5 px-6 py-4 rounded-full text-sm sm:text-base font-semibold text-white border border-white/15 bg-white/[0.03] hover:bg-white/[0.08] hover:border-dobi-orange/50 transition-all"
+            >
+              <i data-lucide="file-text" class="w-5 h-5 text-dobi-orange"></i>
+              Abrir PDF Original
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Quick Stats & Cosmic Visual Card -->
+        <div class="lg:col-span-5">
+          <div class="relative rounded-3xl glass-panel-orange p-6 sm:p-8 overflow-hidden shadow-2xl">
+            <div class=" -right-12 -top-12 w-44 h-44 rounded-full orbital-planet opacity-30 pointer-events-none absolute"></div>
+
+            <div class="relative z-10 space-y-6">
+              <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                <div>
+                  <p class="text-xs uppercase tracking-[0.2em] text-dobi-amber font-semibold">Nuestro Propósito</p>
+                  <h2 class="font-display text-xl font-bold text-white mt-0.5">Creadores de valor, no solo asesores</h2>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-dobi-orange/20 border border-dobi-orange/40 text-dobi-amber text-xs font-bold">
+                  2026
+                </span>
+              </div>
+
+              <div class="grid grid-cols-3 gap-3 text-center">
+                <div class="p-3.5 rounded-2xl bg-black/40 border border-white/10">
+                  <div class="font-display text-2xl sm:text-3xl font-bold text-dobi-orange">+100</div>
+                  <div class="text-[11px] text-zinc-400 mt-1">Empresas atendidas</div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-black/40 border border-white/10">
+                  <div class="font-display text-2xl sm:text-3xl font-bold text-dobi-orange">4</div>
+                  <div class="text-[11px] text-zinc-400 mt-1">Líneas integradas</div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-black/40 border border-white/10">
+                  <div class="font-display text-2xl sm:text-3xl font-bold text-dobi-orange">LATAM</div>
+                  <div class="text-[11px] text-zinc-400 mt-1">Cobertura total</div>
+                </div>
+              </div>
+
+              <!-- 4 Value Badges from Page 2 -->
+              <div class="grid grid-cols-2 gap-2.5 pt-1">
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
+                  <div class="w-8 h-8 rounded-full bg-dobi-orange flex items-center justify-center text-black shrink-0">
+                    <i data-lucide="trending-up" class="w-4 h-4 stroke-[2.5]"></i>
+                  </div>
+                  <span class="text-xs sm:text-sm font-medium text-zinc-200">Más ventas</span>
+                </div>
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
+                  <div class="w-8 h-8 rounded-full bg-dobi-orange flex items-center justify-center text-black shrink-0">
+                    <i data-lucide="coins" class="w-4 h-4 stroke-[2.5]"></i>
+                  </div>
+                  <span class="text-xs sm:text-sm font-medium text-zinc-200">Rentabilidad</span>
+                </div>
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
+                  <div class="w-8 h-8 rounded-full bg-dobi-orange flex items-center justify-center text-black shrink-0">
+                    <i data-lucide="leaf" class="w-4 h-4 stroke-[2.5]"></i>
+                  </div>
+                  <span class="text-xs sm:text-sm font-medium text-zinc-200">Sostenibilidad</span>
+                </div>
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
+                  <div class="w-8 h-8 rounded-full bg-dobi-orange flex items-center justify-center text-black shrink-0">
+                    <i data-lucide="users" class="w-4 h-4 stroke-[2.5]"></i>
+                  </div>
+                  <span class="text-xs sm:text-sm font-medium text-zinc-200">Personas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE PORTFOLIO VIEWER SECTION (MAIN FOCUS) -->
+  <section id="portafolio-interactivo" class="relative z-10 py-8 sm:py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Viewer Container -->
+      <div id="viewer-container" class="rounded-3xl glass-panel border border-white/15 shadow-[0_25px_80px_-15px_rgba(0,0,0,0.85)] overflow-hidden">
+
+        <!-- Top Control Bar -->
+        <div class="px-4 sm:px-6 py-4 border-b border-white/10 bg-[#0B0C12]/90 flex flex-wrap items-center justify-between gap-4">
+          <!-- Left: Slide Title & Counter -->
+          <div class="flex items-center gap-3">
+            <span id="slide-badge" class="px-3 py-1 rounded-lg bg-dobi-orange text-black font-display font-bold text-xs sm:text-sm">
+              01 / 13
+            </span>
+            <div>
+              <h2 id="slide-title" class="font-display font-bold text-sm sm:text-base text-white">
+                Portada · Portafolio de Servicios 2026
+              </h2>
+              <p class="text-[11px] text-zinc-400 hidden sm:block">
+                Usa las flechas del teclado <kbd class="px-1.5 py-0.5 rounded bg-white/10 text-zinc-200">←</kbd> <kbd class="px-1.5 py-0.5 rounded bg-white/10 text-zinc-200">→</kbd> o haz clic en la diapositiva para avanzar
+              </p>
+            </div>
+          </div>
+
+          <!-- Center/Right: Mode Switcher & Actions -->
+          <div class="flex items-center gap-2 flex-wrap">
+            <!-- View Mode Toggle -->
+            <div class="inline-flex rounded-xl bg-black/60 p-1 border border-white/10">
+              <button
+                id="btn-mode-deck"
+                onclick="setViewerMode('deck')"
+                class="px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 bg-dobi-orange text-black transition-all"
+              >
+                <i data-lucide="monitor-play" class="w-3.5 h-3.5"></i>
+                <span>Presentación</span>
+              </button>
+              <button
+                id="btn-mode-grid"
+                onclick="setViewerMode('grid')"
+                class="px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 text-zinc-300 hover:text-white transition-all"
+              >
+                <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
+                <span>Cuadrícula (13)</span>
+              </button>
+              <button
+                id="btn-mode-pdf"
+                onclick="setViewerMode('pdf')"
+                class="px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 text-zinc-300 hover:text-white transition-all"
+              >
+                <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+                <span class="hidden sm:inline">Lector PDF</span>
+              </button>
+            </div>
+
+            <!-- Fullscreen Button -->
+            <button
+              onclick="toggleFullscreen()"
+              title="Pantalla Completa"
+              class="p-2.5 rounded-xl bg-white/5 hover:bg-white/15 border border-white/10 text-zinc-200 transition-all"
+            >
+              <i data-lucide="maximize-2" class="w-4 h-4"></i>
+            </button>
+
+            <!-- Download PDF Button -->
+            <a
+              href="Portafolio%20Dobi%202026.pdf"
+              download="Portafolio-Dobi-2026.pdf"
+              class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-dobi-orange/15 hover:bg-dobi-orange/25 border border-dobi-orange/40 text-dobi-amber text-xs font-semibold transition-all"
+            >
+              <i data-lucide="download" class="w-3.5 h-3.5"></i>
+              <span class="hidden md:inline">Descargar PDF</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- MODE 1: INTERACTIVE SLIDE DECK VIEW -->
+        <div id="view-deck" class="block">
+          <!-- Main Stage -->
+          <div id="slide-stage" class="relative bg-[#050508] flex items-center justify-center select-none overflow-hidden min-h-[260px] sm:min-h-[460px] lg:min-h-[600px]">
+            <!-- Progress Bar at very top of stage -->
+            <div class="absolute top-0 left-0 right-0 h-1 bg-white/10 z-20">
+              <div id="slide-progress" class="h-full bg-gradient-to-r from-dobi-orange to-dobi-amber transition-all duration-300" style="width: 7.69%"></div>
+            </div>
+
+            <!-- Previous Button -->
+            <button
+              onclick="prevSlide()"
+              aria-label="Diapositiva anterior"
+              class="absolute left-3 sm:left-5 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/70 hover:bg-dobi-orange text-white hover:text-black border border-white/15 flex items-center justify-center transition-all shadow-lg backdrop-blur-md"
+            >
+              <i data-lucide="chevron-left" class="w-6 h-6"></i>
+            </button>
+
+            <!-- Active Slide Image -->
+            <div class="w-full h-full flex items-center justify-center p-2 sm:p-6">
+              <img
+                id="active-slide-img"
+                src="assets/slides/slide-01.jpg"
+                alt="Diapositiva 1 - Portafolio Dobi 2026"
+                onclick="nextSlide()"
+                class="slide-fade max-h-[74vh] w-auto max-w-full rounded-xl shadow-[0_15px_60px_rgba(0,0,0,0.9)] border border-white/10 cursor-pointer object-contain"
+              />
+            </div>
+
+            <!-- Next Button -->
+            <button
+              onclick="nextSlide()"
+              aria-label="Siguiente diapositiva"
+              class="absolute right-3 sm:right-5 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/70 hover:bg-dobi-orange text-white hover:text-black border border-white/15 flex items-center justify-center transition-all shadow-lg backdrop-blur-md"
+            >
+              <i data-lucide="chevron-right" class="w-6 h-6"></i>
+            </button>
+          </div>
+
+          <!-- Filmstrip Thumbnail Bar -->
+          <div class="px-4 sm:px-6 py-3.5 bg-[#0A0B10] border-t border-white/10">
+            <div id="filmstrip" class="filmstrip-scroll flex items-center gap-2.5 overflow-x-auto pb-1.5">
+              <!-- Populated dynamically by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- MODE 2: 13-SLIDE GRID OVERVIEW -->
+        <div id="view-grid" class="hidden p-6 sm:p-8 bg-[#08090E]">
+          <div class="mb-6 flex items-center justify-between">
+            <div>
+              <h3 class="font-display text-lg font-bold text-white">Vista General del Portafolio (13 Diapositivas)</h3>
+              <p class="text-xs text-zinc-400">Haz clic en cualquier página para abrirla en alta definición</p>
+            </div>
+          </div>
+          <div id="slides-grid-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            <!-- Populated dynamically by JS -->
+          </div>
+        </div>
+
+        <!-- MODE 3: EMBEDDED NATIVE PDF VIEW -->
+        <div id="view-pdf" class="hidden bg-[#08090E]">
+          <iframe
+            src="Portafolio%20Dobi%202026.pdf#toolbar=1&navpanes=0&view=FitH"
+            class="w-full h-[75vh] border-0"
+            title="Portafolio Dobi 2026 PDF"
+          ></iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CUATRO FRENTES DE SERVICIO (INTERACTIVE SUMMARY FROM PDF PAGES 4-8) -->
+  <section id="servicios" class="relative z-10 py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <p class="text-xs uppercase tracking-[0.25em] text-dobi-orange font-semibold mb-2">Nuestros Servicios</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">
+            Cuatro frentes para hacer crecer tu negocio
+          </h2>
+        </div>
+        <p class="text-sm text-zinc-400 max-w-md">
+          Haz clic en cada línea de servicio para ir directamente a su página detallada en la presentación o consultar sus alcances.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- 01 Marketing Estratégico -->
+        <div class="group rounded-3xl glass-panel p-7 sm:p-8 hover:border-dobi-orange/50 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-display text-4xl font-bold text-white/20 group-hover:text-dobi-orange transition-colors">01</span>
+              <div class="w-12 h-12 rounded-2xl bg-dobi-orange flex items-center justify-center text-black shadow-lg shadow-dobi-orange/25">
+                <i data-lucide="line-chart" class="w-6 h-6 stroke-[2.2]"></i>
+              </div>
+            </div>
+            <h3 class="font-display text-2xl font-bold text-white mb-2">Marketing estratégico</h3>
+            <p class="text-sm text-zinc-400 mb-6">
+              Un ecosistema de marketing integrado: estrategia, investigación, marca y punto de venta trabajando hacia un mismo objetivo.
+            </p>
+            <ul class="grid sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-zinc-300 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-dobi-orange shrink-0"></i> Planes de marketing</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-dobi-orange shrink-0"></i> Propuesta de valor (Canvas)</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-dobi-orange shrink-0"></i> Investigación de mercados</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-dobi-orange shrink-0"></i> Mystery Shopper</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-dobi-orange shrink-0"></i> Branding y arquitectura</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-dobi-orange shrink-0"></i> Marketing digital & PDV</li>
+            </ul>
+          </div>
+          <button
+            onclick="jumpToSlide(5)"
+            class="w-full py-3 px-4 rounded-xl bg-white/[0.04] hover:bg-dobi-orange hover:text-black border border-white/10 text-xs font-semibold uppercase tracking-wider transition-all flex items-center justify-center gap-2"
+          >
+            <span>Ver Diapositiva 05 en el Portafolio</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <!-- 02 Estrategia Comercial -->
+        <div class="group rounded-3xl glass-panel p-7 sm:p-8 hover:border-dobi-orange/50 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-display text-4xl font-bold text-white/20 group-hover:text-dobi-orange transition-colors">02</span>
+              <div class="w-12 h-12 rounded-2xl bg-dobi-orange flex items-center justify-center text-black shadow-lg shadow-dobi-orange/25">
+                <i data-lucide="chess-knight" class="w-6 h-6 stroke-[2.2]"></i>
+              </div>
+            </div>
+            <div class="flex items-center gap-2.5 mb-2">
+              <h3 class="font-display text-2xl font-bold text-white">Estrategia comercial</h3>
+              <span class="px-2 py-0.5 rounded-md bg-dobi-orange text-black font-bold text-[10px]">IA + DATA</span>
+            </div>
+            <p class="text-sm text-zinc-400 mb-6">
+              Definimos contigo una ruta de mercado y una ejecución comercial exitosa apalancada en datos e Inteligencia Artificial.
+            </p>
+            <ul class="grid sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-zinc-300 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-dobi-orange shrink-0"></i> Mentoring comercial</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-dobi-orange shrink-0"></i> Juntas directivas comerciales</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-dobi-orange shrink-0"></i> Estructuración de equipos</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-dobi-orange shrink-0"></i> Auditoría comercial</li>
+              <li class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-dobi-amber shrink-0"></i> Entrenamiento en ventas con IA</li>
+              <li class="flex items-center gap-2"><i data-lucide="bar-chart-3" class="w-4 h-4 text-dobi-amber shrink-0"></i> Business Intelligence & BI</li>
+            </ul>
+          </div>
+          <button
+            onclick="jumpToSlide(6)"
+            class="w-full py-3 px-4 rounded-xl bg-white/[0.04] hover:bg-dobi-orange hover:text-black border border-white/10 text-xs font-semibold uppercase tracking-wider transition-all flex items-center justify-center gap-2"
+          >
+            <span>Ver Diapositiva 06 en el Portafolio</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <!-- 03 Talleres y Capacitaciones -->
+        <div class="group rounded-3xl glass-panel p-7 sm:p-8 hover:border-dobi-orange/50 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-display text-4xl font-bold text-white/20 group-hover:text-dobi-orange transition-colors">03</span>
+              <div class="w-12 h-12 rounded-2xl bg-dobi-orange flex items-center justify-center text-black shadow-lg shadow-dobi-orange/25">
+                <i data-lucide="graduation-cap" class="w-6 h-6 stroke-[2.2]"></i>
+              </div>
+            </div>
+            <h3 class="font-display text-2xl font-bold text-white mb-2">Talleres y capacitaciones</h3>
+            <p class="text-sm text-zinc-400 mb-6">
+              Desarrollamos las habilidades de tu equipo para el éxito comercial con programas in-company y talleres a la medida.
+            </p>
+            <ul class="grid sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-zinc-300 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-dobi-orange shrink-0"></i> Servicio al cliente & CX</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-dobi-orange shrink-0"></i> Empatía y comunicación</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-dobi-orange shrink-0"></i> Habilidades gerenciales</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-dobi-orange shrink-0"></i> Manejo de objeciones y cierre</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-dobi-orange shrink-0"></i> Negociación estratégica</li>
+              <li class="flex items-center gap-2"><i data-lucide="puzzle" class="w-4 h-4 text-dobi-amber shrink-0"></i> Talleres 100% a la medida</li>
+            </ul>
+          </div>
+          <button
+            onclick="jumpToSlide(7)"
+            class="w-full py-3 px-4 rounded-xl bg-white/[0.04] hover:bg-dobi-orange hover:text-black border border-white/10 text-xs font-semibold uppercase tracking-wider transition-all flex items-center justify-center gap-2"
+          >
+            <span>Ver Diapositiva 07 en el Portafolio</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <!-- 04 Conferencias -->
+        <div class="group rounded-3xl glass-panel p-7 sm:p-8 hover:border-dobi-orange/50 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-display text-4xl font-bold text-white/20 group-hover:text-dobi-orange transition-colors">04</span>
+              <div class="w-12 h-12 rounded-2xl bg-dobi-orange flex items-center justify-center text-black shadow-lg shadow-dobi-orange/25">
+                <i data-lucide="mic" class="w-6 h-6 stroke-[2.2]"></i>
+              </div>
+            </div>
+            <h3 class="font-display text-2xl font-bold text-white mb-2">Conferencias que inspiran y movilizan</h3>
+            <p class="text-sm text-zinc-400 mb-6">
+              Experiencias de alto impacto para auditorios, congresos, summits y convenciones corporativas en toda LATAM.
+            </p>
+            <ul class="grid sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-zinc-300 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="flame" class="w-4 h-4 text-dobi-orange shrink-0"></i> ¡Conecta con tu cliente!</li>
+              <li class="flex items-center gap-2"><i data-lucide="flame" class="w-4 h-4 text-dobi-orange shrink-0"></i> Empieza por gerenciarte</li>
+              <li class="flex items-center gap-2"><i data-lucide="flame" class="w-4 h-4 text-dobi-orange shrink-0"></i> Pensamiento estratégico</li>
+              <li class="flex items-center gap-2"><i data-lucide="flame" class="w-4 h-4 text-dobi-orange shrink-0"></i> ¡Enfócate! (Foco estratégico)</li>
+            </ul>
+          </div>
+          <button
+            onclick="jumpToSlide(8)"
+            class="w-full py-3 px-4 rounded-xl bg-white/[0.04] hover:bg-dobi-orange hover:text-black border border-white/10 text-xs font-semibold uppercase tracking-wider transition-all flex items-center justify-center gap-2"
+          >
+            <span>Ver Diapositivas 08 y 09 en el Portafolio</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIÉN LIDERA (MARIO DUQUE - PAGE 3) -->
+  <section id="liderazgo" class="relative z-10 py-14 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl glass-panel-orange p-8 sm:p-12 lg:p-14 relative overflow-hidden">
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-5">
+            <p class="text-xs uppercase tracking-[0.25em] text-dobi-amber font-semibold">Quién Lidera · Liderazgo con Propósito</p>
+            <blockquote class="font-display text-xl sm:text-2xl lg:text-3xl font-medium italic text-white leading-relaxed">
+              “Si los miembros de tu equipo no están inspirados y alineados con el propósito superior de la organización, nunca lograrás que tu estrategia llegue a su destino. Lidéralos con propósito, humildad e integridad: verás que tarde o temprano se lograrán tus objetivos.”
+            </blockquote>
+            <div class="pt-2 flex flex-wrap items-center justify-between gap-4 border-t border-white/10">
+              <div>
+                <div class="font-display text-2xl font-bold text-dobi-orange tracking-wide">MARIO DUQUE</div>
+                <div class="text-sm text-zinc-200">Founder / Director de Marketing y Estrategia</div>
+                <div class="text-xs tracking-[0.2em] text-zinc-400 uppercase mt-0.5">DOING BUSINESS S.A.S.</div>
+              </div>
+              <button
+                onclick="jumpToSlide(3)"
+                class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-dobi-orange hover:text-black text-xs font-semibold transition-all flex items-center gap-2"
+              >
+                <span>Ver perfil en diapositiva 03</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div onclick="jumpToSlide(3)" class="cursor-pointer group relative rounded-2xl overflow-hidden border border-dobi-orange/40 shadow-2xl">
+              <img
+                src="assets/slides/slide-03.jpg"
+                alt="Mario Duque - Founder / Director de Marketing y Estrategia en dobi"
+                class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-4">
+                <span class="text-xs font-medium text-white flex items-center gap-1.5">
+                  <i data-lucide="zoom-in" class="w-4 h-4 text-dobi-orange"></i>
+                  Ampliar en el visor interactivo
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTES & EXPERIENCIA EN ESCENARIO (PAGES 9-12) -->
+  <section id="clientes" class="relative z-10 py-14 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-xs uppercase tracking-[0.25em] text-dobi-orange font-semibold mb-2">Respaldo y Trayectoria</p>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">
+          +100 organizaciones de distintos sectores han crecido con dobi
+        </h2>
+        <p class="text-sm sm:text-base text-zinc-400 mt-3">
+          Consumo masivo y retail · Energía y gas · Salud y farmacéutico · Educación · Gremios y cámaras de comercio · Sector financiero
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Card: Experiencia en escenario (Slide 9) -->
+        <div onclick="jumpToSlide(9)" class="group cursor-pointer rounded-3xl glass-panel p-5 hover:border-dobi-orange/50 transition-all">
+          <div class="flex items-center justify-between mb-4 px-1">
+            <div>
+              <span class="text-[11px] uppercase tracking-widest text-dobi-orange font-semibold">Experiencia en Escenario</span>
+              <h3 class="font-display text-lg font-bold text-white">Así se vive dobi en las organizaciones</h3>
+            </div>
+            <span class="p-2 rounded-full bg-white/5 group-hover:bg-dobi-orange group-hover:text-black transition-all">
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </span>
+          </div>
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img src="assets/slides/slide-09.jpg" alt="Experiencia en escenario dobi" class="w-full h-auto group-hover:scale-[1.02] transition-transform duration-300" />
+          </div>
+        </div>
+
+        <!-- Card: Empresas que confían en nosotros (Slide 10) -->
+        <div onclick="jumpToSlide(10)" class="group cursor-pointer rounded-3xl glass-panel p-5 hover:border-dobi-orange/50 transition-all">
+          <div class="flex items-center justify-between mb-4 px-1">
+            <div>
+              <span class="text-[11px] uppercase tracking-widest text-dobi-orange font-semibold">Nuestros Clientes</span>
+              <h3 class="font-display text-lg font-bold text-white">Empresas que confían en nosotros</h3>
+            </div>
+            <span class="p-2 rounded-full bg-white/5 group-hover:bg-dobi-orange group-hover:text-black transition-all">
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </span>
+          </div>
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img src="assets/slides/slide-10.jpg" alt="Clientes de dobi" class="w-full h-auto group-hover:scale-[1.02] transition-transform duration-300" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO & CTA FINAL (PAGE 13) -->
+  <section id="contacto" class="relative z-10 py-16 sm:py-24 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl glass-panel p-8 sm:p-12 lg:p-16 relative overflow-hidden border border-dobi-orange/30">
+        <!-- Decorative glowing planet -->
+        <div class="hidden lg:block absolute -right-20 -bottom-20 w-96 h-96 rounded-full orbital-planet opacity-80 pointer-events-none"></div>
+        <div class="hidden lg:block absolute right-56 top-12 w-16 h-16 rounded-full orbital-moon opacity-90 pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-2xl space-y-6">
+          <p class="text-xs uppercase tracking-[0.28em] text-dobi-orange font-semibold">Contáctanos</p>
+          <h2 class="font-display text-3xl sm:text-5xl font-bold text-white leading-tight">
+            Hablemos de cómo hacer crecer tu organización
+          </h2>
+          <p class="text-zinc-300 text-base sm:text-lg">
+            Agenda una conversación estratégica con <strong class="text-white">Mario Duque</strong> y el equipo de <strong class="text-white">dobi</strong> para diseñar la ruta comercial, de marketing o formación de tu empresa.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-4 pt-2">
+            <a
+              href="https://wa.me/573206924074?text=Hola%20Mario,%20vi%20el%20portafolio%20de%20dobi%20en%20dobipro.com%20y%20quiero%20conversar%20sobre%20c%C3%B3mo%20hacer%20crecer%20nuestra%20organizaci%C3%B3n."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-3.5 p-4 rounded-2xl bg-black/60 hover:bg-dobi-orange/20 border border-white/10 hover:border-dobi-orange transition-all group"
+            >
+              <div class="w-11 h-11 rounded-xl bg-dobi-orange flex items-center justify-center text-black shrink-0">
+                <i data-lucide="phone-call" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs text-zinc-400">WhatsApp / Teléfono Directo</div>
+                <div class="font-display font-bold text-white group-hover:text-dobi-amber">+57 320 692 4074</div>
+              </div>
+            </a>
+
+            <a
+              href="mailto:gerencia@dobipro.com?subject=Consulta%20Portafolio%20de%20Servicios%20dobi%202026"
+              class="flex items-center gap-3.5 p-4 rounded-2xl bg-black/60 hover:bg-dobi-orange/20 border border-white/10 hover:border-dobi-orange transition-all group"
+            >
+              <div class="w-11 h-11 rounded-xl bg-dobi-orange flex items-center justify-center text-black shrink-0">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs text-zinc-400">Correo Electrónico</div>
+                <div class="font-display font-bold text-white group-hover:text-dobi-amber">gerencia@dobipro.com</div>
+              </div>
+            </a>
+          </div>
+
+          <div class="pt-4 flex flex-wrap items-center gap-4">
+            <a
+              href="Portafolio%20Dobi%202026.pdf"
+              download="Portafolio-Dobi-2026.pdf"
+              class="btn-orange inline-flex items-center gap-2.5 px-7 py-4 rounded-full text-sm font-bold text-black"
+            >
+              <i data-lucide="download" class="w-4 h-4"></i>
+              Descargar Portafolio Completo (PDF)
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+        <div class="flex items-center gap-3">
+          <span class="font-display font-bold text-white text-sm">dobi</span>
+          <span>·</span>
+          <span>DOING BUSINESS S.A.S. — Creadores de Valor</span>
+        </div>
+        <div>
+          © 2026 dobipro.com · Todos los derechos reservados.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp Quick Button -->
+  <a
+    href="https://wa.me/573206924074?text=Hola%20Mario,%20acabo%20de%20revisar%20el%20Portafolio%202026%20en%20dobipro.com%20y%20me%20gustar%C3%ADa%20agendar%20una%20reuni%C3%B3n."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp"
+    class="fixed bottom-6 right-6 z-50 btn-orange w-14 h-14 rounded-full flex items-center justify-center text-black shadow-2xl"
+  >
+    <i data-lucide="message-circle" class="w-7 h-7 fill-black"></i>
+  </a>
+
+  <!-- Interactive Presentation Script -->
+  <script>
+    const SLIDES = [
+      { id: 1, title: "Portada · Portafolio de Servicios 2026", tag: "Portada" },
+      { id: 2, title: "Quiénes Somos & Nuestro Propósito", tag: "Nosotros" },
+      { id: 3, title: "Quién Lidera · Mario Duque", tag: "Liderazgo" },
+      { id: 4, title: "Nuestros Servicios · 4 Frentes de Crecimiento", tag: "Servicios" },
+      { id: 5, title: "01 · Marketing Estratégico", tag: "01 Marketing" },
+      { id: 6, title: "02 · Estrategia Comercial (IA & DATA)", tag: "02 Comercial" },
+      { id: 7, title: "03 · Talleres y Capacitaciones", tag: "03 Talleres" },
+      { id: 8, title: "04 · Conferencias que Inspiran y Movilizan", tag: "04 Conferencias" },
+      { id: 9, title: "Experiencia en Escenario · Así se vive dobi", tag: "Escenario" },
+      { id: 10, title: "Clientes · +100 Empresas Confían en Nosotros", tag: "Clientes" },
+      { id: 11, title: "Por Qué dobi · Creadores de Valor", tag: "Por qué dobi" },
+      { id: 12, title: "Cobertura LATAM · Donde estés, allí estamos", tag: "Cobertura" },
+      { id: 13, title: "Contáctanos · Hablemos de tu organización", tag: "Contacto" }
+    ];
+
+    let currentSlide = 1;
+    let currentMode = 'deck';
+
+    function pad(num) {
+      return String(num).padStart(2, '0');
+    }
+
+    function getSlideUrl(index) {
+      return `assets/slides/slide-${pad(index)}.jpg`;
+    }
+
+    function renderFilmstrip() {
+      const filmstrip = document.getElementById('filmstrip');
+      filmstrip.innerHTML = SLIDES.map((s) => {
+        const active = s.id === currentSlide;
+        return `
+          <button
+            id="thumb-${s.id}"
+            onclick="goToSlide(${s.id})"
+            class="group relative shrink-0 w-28 sm:w-36 rounded-xl overflow-hidden border transition-all text-left ${
+              active
+                ? 'border-dobi-orange ring-2 ring-dobi-orange/50 scale-[1.02]'
+                : 'border-white/10 opacity-60 hover:opacity-100 hover:border-white/30'
+            }"
+          >
+            <img src="${getSlideUrl(s.id)}" alt="${s.title}" class="w-full h-16 sm:h-20 object-cover" loading="lazy" />
+            <div class="px-2 py-1 bg-black/85 flex items-center justify-between text-[10px]">
+              <span class="font-bold ${active ? 'text-dobi-orange' : 'text-zinc-400'}">${pad(s.id)}</span>
+              <span class="truncate text-zinc-200 ml-1">${s.tag}</span>
+            </div>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function renderGrid() {
+      const grid = document.getElementById('slides-grid-container');
+      grid.innerHTML = SLIDES.map((s) => `
+        <div
+          onclick="selectFromGrid(${s.id})"
+          class="group cursor-pointer rounded-2xl overflow-hidden border border-white/10 hover:border-dobi-orange bg-black/50 transition-all hover:-translate-y-1 shadow-lg"
+        >
+          <div class="relative overflow-hidden">
+            <img src="${getSlideUrl(s.id)}" alt="${s.title}" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+            <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-md bg-black/80 border border-white/15 font-display font-bold text-xs text-dobi-orange">
+              ${pad(s.id)}
+            </span>
+          </div>
+          <div class="p-3.5 flex items-center justify-between">
+            <span class="text-xs font-medium text-zinc-200 group-hover:text-white truncate">${s.title}</span>
+            <i data-lucide="maximize-2" class="w-3.5 h-3.5 text-dobi-orange shrink-0 ml-2"></i>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    function goToSlide(index) {
+      if (index < 1) index = SLIDES.length;
+      if (index > SLIDES.length) index = 1;
+      currentSlide = index;
+
+      const slideObj = SLIDES[currentSlide - 1];
+      const imgEl = document.getElementById('active-slide-img');
+      imgEl.style.opacity = '0.35';
+
+      setTimeout(() => {
+        imgEl.src = getSlideUrl(currentSlide);
+        imgEl.alt = slideObj.title;
+        imgEl.style.opacity = '1';
+      }, 90);
+
+      document.getElementById('slide-badge').textContent = `${pad(currentSlide)} / ${pad(SLIDES.length)}`;
+      document.getElementById('slide-title').textContent = slideObj.title;
+      document.getElementById('slide-progress').style.width = `${(currentSlide / SLIDES.length) * 100}%`;
+
+      renderFilmstrip();
+
+      const activeThumb = document.getElementById(`thumb-${currentSlide}`);
+      if (activeThumb) {
+        activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    }
+
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentSlide - 1);
+    }
+
+    function setViewerMode(mode) {
+      currentMode = mode;
+      document.getElementById('view-deck').classList.toggle('hidden', mode !== 'deck');
+      document.getElementById('view-grid').classList.toggle('hidden', mode !== 'grid');
+      document.getElementById('view-pdf').classList.toggle('hidden', mode !== 'pdf');
+
+      const modes = ['deck', 'grid', 'pdf'];
+      modes.forEach((m) => {
+        const btn = document.getElementById(`btn-mode-${m}`);
+        if (m === mode) {
+          btn.className = 'px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 bg-dobi-orange text-black transition-all';
+        } else {
+          btn.className = 'px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 text-zinc-300 hover:text-white transition-all';
+        }
+      });
+    }
+
+    function selectFromGrid(index) {
+      setViewerMode('deck');
+      goToSlide(index);
+    }
+
+    function jumpToSlide(index) {
+      setViewerMode('deck');
+      goToSlide(index);
+      document.getElementById('portafolio-interactivo').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function toggleFullscreen() {
+      const container = document.getElementById('viewer-container');
+      if (!document.fullscreenElement) {
+        container.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (currentMode !== 'deck') return;
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+
+    // Initialize on load
+    document.addEventListener('DOMContentLoaded', () => {
+      renderFilmstrip();
+      renderGrid();
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
