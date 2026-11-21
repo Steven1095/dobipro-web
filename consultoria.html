@@ -5,71 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Consultoría de Marketing y Estrategia Comercial | dobi · Creadores de Valor</title>
   <meta name="description" content="Acompañamos a tu organización desde la estrategia de marketing hasta la ejecución comercial con Inteligencia Artificial y Business Intelligence." />
-  <meta name="theme-color" content="#0B0B0E" />
+  <meta name="theme-color" content="#07070B" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            display: ['"Space Grotesk"', 'sans-serif'],
-          },
-          colors: {
-            dobi: {
-              orange: '#F58220',
-              amber: '#FF9F38',
-              dark: '#0B0B0E',
-              card: '#181920',
-            }
-          }
-        }
-      }
-    };
-  </script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-[#0B0B0E] text-[#F4F4F6] antialiased selection:bg-dobi-orange selection:text-black">
+<body class="cosmic-bg text-[#F4F4F6] antialiased selection:bg-dobi-orange selection:text-black">
+
+  <!-- Decorative Orbital Rings -->
+  <div class="pointer-events-none fixed inset-0 overflow-hidden z-0 opacity-60">
+    <svg class="absolute -right-24 top-10 w-[850px] h-[850px] text-dobi-orange/15 animate-float" viewBox="0 0 800 800" fill="none">
+      <ellipse cx="400" cy="400" rx="370" ry="140" transform="rotate(-22 400 400)" stroke="#F58220" stroke-opacity="0.22" stroke-width="1.4" />
+      <ellipse cx="400" cy="400" rx="310" ry="110" transform="rotate(-15 400 400)" stroke="#FF9F38" stroke-opacity="0.18" stroke-width="1" stroke-dasharray="6 8" />
+    </svg>
+  </div>
 
   <!-- HEADER / NAVIGATION -->
-  <header class="sticky top-0 z-50 border-b border-white/10 bg-[#0B0B0E]/90 backdrop-blur-xl">
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-[#07070B]/85 backdrop-blur-xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-      <a href="test.html" class="shrink-0 flex items-center">
-        <img src="assets/img/logo-dobi.png" alt="dobi · Creadores de Valor" class="h-10 sm:h-11 w-auto object-contain" />
+      <a href="test.html" class="shrink-0 flex items-center group">
+        <img src="assets/img/logo-dobi.png" alt="dobi · Creadores de Valor" class="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
       </a>
 
       <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
-        <a href="test.html" class="text-zinc-300 hover:text-white transition-colors">Inicio</a>
+        <a href="test.html" class="text-zinc-300 hover:text-dobi-orange transition-colors">Inicio</a>
         <a href="consultoria.html" class="text-dobi-orange font-semibold">Consultoría</a>
-        <a href="formacion.html" class="text-zinc-300 hover:text-white transition-colors">Formación</a>
-        <a href="conferencias.html" class="text-zinc-300 hover:text-white transition-colors">Conferencias</a>
-        <a href="nosotros.html" class="text-zinc-300 hover:text-white transition-colors">Nosotros</a>
-        <a href="contacto.html" class="text-zinc-300 hover:text-white transition-colors">Contacto</a>
+        <a href="formacion.html" class="text-zinc-300 hover:text-dobi-orange transition-colors">Formación</a>
+        <a href="conferencias.html" class="text-zinc-300 hover:text-dobi-orange transition-colors">Conferencias</a>
+        <a href="nosotros.html" class="text-zinc-300 hover:text-dobi-orange transition-colors">Nosotros</a>
+        <a href="contacto.html" class="text-zinc-300 hover:text-dobi-orange transition-colors">Contacto</a>
       </nav>
 
       <div class="flex items-center gap-3">
         <a
           href="contacto.html"
-          class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-dobi-orange hover:bg-dobi-amber text-black font-semibold text-xs sm:text-sm transition-all"
+          class="btn-orange inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-black font-bold text-xs sm:text-sm"
         >
-          Agenda una conversación
+          <span>Agenda una conversación</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
         </a>
         <button
           onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
           aria-label="Abrir menú"
-          class="lg:hidden p-2.5 rounded-lg bg-white/5 border border-white/10 text-zinc-200 hover:text-white"
+          class="lg:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-zinc-200 hover:text-white"
         >
           <i data-lucide="menu" class="w-5 h-5"></i>
         </button>
       </div>
     </div>
 
-    <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 bg-[#0F1015] px-4 py-4 space-y-2">
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 bg-[#0F1015]/95 backdrop-blur-xl px-4 py-4 space-y-2">
       <a href="test.html" class="block px-3 py-2 rounded-lg text-zinc-300 hover:bg-white/5 text-sm">Inicio</a>
       <a href="consultoria.html" class="block px-3 py-2 rounded-lg bg-dobi-orange/15 text-dobi-orange font-semibold text-sm">Consultoría</a>
       <a href="formacion.html" class="block px-3 py-2 rounded-lg text-zinc-300 hover:bg-white/5 text-sm">Formación</a>
@@ -80,23 +69,24 @@
   </header>
 
   <!-- PAGE HERO / INTRO -->
-  <section class="relative py-14 sm:py-20 border-b border-white/10 overflow-hidden">
+  <section class="relative z-10 py-14 sm:py-20 border-b border-white/10 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl space-y-5">
-        <p class="text-xs uppercase tracking-[0.25em] text-dobi-orange font-semibold">
+        <div data-motion="fade-up" class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-dobi-orange/15 border border-dobi-orange/35 text-dobi-amber text-xs font-semibold uppercase tracking-[0.22em]">
+          <span class="w-2 h-2 rounded-full bg-dobi-orange animate-ping"></span>
           CONSULTORÍA ESTRATÉGICA Y COMERCIAL
-        </p>
-        <h1 class="font-display text-3xl sm:text-5xl font-bold text-white leading-tight">
-          Te acompañamos de la <span class="text-dobi-orange">estrategia</span> a la ejecución
+        </div>
+        <h1 data-motion="fade-up" data-delay="0.1" class="font-display text-3xl sm:text-5xl font-bold text-white leading-tight">
+          Te acompañamos de la <span class="text-gradient-orange">estrategia</span> a la ejecución
         </h1>
-        <p class="text-base sm:text-lg text-zinc-300 leading-relaxed">
-          En <strong class="text-white">dobi</strong> somos un grupo de expertos apasionados por el marketing, las ventas y el liderazgo. Con base en nuestra experiencia de largos años en la empresa privada, aportamos a nuestros clientes valor real para el crecimiento de sus negocios.
+        <p data-motion="fade-up" data-delay="0.2" class="text-base sm:text-lg text-zinc-300 leading-relaxed font-light">
+          En <strong class="text-white font-semibold">dobi</strong> somos un grupo de expertos apasionados por el marketing, las ventas y el liderazgo. Con base en nuestra experiencia de largos años en la empresa privada, aportamos a nuestros clientes valor real para el crecimiento de sus negocios.
         </p>
-        <div class="flex flex-wrap gap-3 pt-2">
-          <a href="#marketing" class="px-5 py-2.5 rounded-lg bg-dobi-orange text-black font-semibold text-xs sm:text-sm">
+        <div data-motion="fade-up" data-delay="0.3" class="flex flex-wrap gap-3 pt-2">
+          <a href="#marketing" class="btn-orange px-6 py-3 rounded-full text-black font-bold text-xs sm:text-sm">
             01 · Marketing Estratégico
           </a>
-          <a href="#comercial" class="px-5 py-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/15 text-white font-semibold text-xs sm:text-sm transition-colors">
+          <a href="#comercial" class="glass-panel px-6 py-3 rounded-full hover:border-dobi-orange/50 text-white font-semibold text-xs sm:text-sm transition-all">
             02 · Estrategia Comercial (IA & DATA)
           </a>
         </div>
@@ -105,23 +95,23 @@
   </section>
 
   <!-- FRENTE 01: MARKETING ESTRATÉGICO (PDF Page 5) -->
-  <section id="marketing" class="py-16 sm:py-24 border-b border-white/10">
+  <section id="marketing" class="relative z-10 py-16 sm:py-24 border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-12 gap-12 items-center">
         <!-- Left 7 Cards -->
         <div class="lg:col-span-7 space-y-8">
-          <div>
+          <div data-motion="fade-up">
             <p class="text-xs uppercase tracking-[0.25em] text-dobi-orange font-semibold mb-2">
               01 · MARKETING ESTRATÉGICO
             </p>
             <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">
-              Una estrategia de marketing ganadora
+              Una estrategia de marketing <span class="text-gradient-orange">ganadora</span>
             </h2>
           </div>
 
           <div class="grid sm:grid-cols-2 gap-4">
-            <div class="p-5 rounded-2xl bg-dobi-card border border-white/10 flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-dobi-orange flex items-center justify-center text-black shrink-0">
+            <div data-motion="fade-up" data-delay="0.05" data-tilt class="spotlight-card p-5 rounded-2xl glass-panel flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-dobi-orange flex items-center justify-center text-black shrink-0 shadow-lg shadow-dobi-orange/25">
                 <i data-lucide="trending-up" class="w-5 h-5"></i>
               </div>
               <div>
@@ -130,8 +120,8 @@
               </div>
             </div>
 
-            <div class="p-5 rounded-2xl bg-dobi-card border border-white/10 flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-dobi-orange flex items-center justify-center text-black shrink-0">
+            <div data-motion="fade-up" data-delay="0.1" data-tilt class="spotlight-card p-5 rounded-2xl glass-panel flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-dobi-orange flex items-center justify-center text-black shrink-0 shadow-lg shadow-dobi-orange/25">
                 <i data-lucide="gem" class="w-5 h-5"></i>
               </div>
               <div>
@@ -140,8 +130,8 @@
               </div>
             </div>
 
-            <div class="p-5 rounded-2xl bg-dobi-card border border-white/10 flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-dobi-orange flex items-center justify-center text-black shrink-0">
+            <div data-motion="fade-up" data-delay="0.15" data-tilt class="spotlight-card p-5 rounded-2xl glass-panel flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-dobi-orange flex items-center justify-center text-black shrink-0 shadow-lg shadow-dobi-orange/25">
                 <i data-lucide="search" class="w-5 h-5"></i>
               </div>
               <div>
@@ -150,8 +140,8 @@
               </div>
             </div>
 
-            <div class="p-5 rounded-2xl bg-dobi-card border border-white/10 flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-dobi-orange flex items-center justify-center text-black shrink-0">
+            <div data-motion="fade-up" data-delay="0.2" data-tilt class="spotlight-card p-5 rounded-2xl glass-panel flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-dobi-orange flex items-center justify-center text-black shrink-0 shadow-lg shadow-dobi-orange/25">
                 <i data-lucide="user-check" class="w-5 h-5"></i>
               </div>
               <div>
@@ -160,8 +150,8 @@
               </div>
             </div>
 
-            <div class="p-5 rounded-2xl bg-dobi-card border border-white/10 flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-dobi-orange flex items-center justify-center text-black shrink-0">
+            <div data-motion="fade-up" data-delay="0.25" data-tilt class="spotlight-card p-5 rounded-2xl glass-panel flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-dobi-orange flex items-center justify-center text-black shrink-0 shadow-lg shadow-dobi-orange/25">
                 <i data-lucide="tag" class="w-5 h-5"></i>
               </div>
               <div>
@@ -170,8 +160,8 @@
               </div>
             </div>
 
-            <div class="p-5 rounded-2xl bg-dobi-card border border-white/10 flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-dobi-orange flex items-center justify-center text-black shrink-0">
+            <div data-motion="fade-up" data-delay="0.3" data-tilt class="spotlight-card p-5 rounded-2xl glass-panel flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-dobi-orange flex items-center justify-center text-black shrink-0 shadow-lg shadow-dobi-orange/25">
                 <i data-lucide="smartphone" class="w-5 h-5"></i>
               </div>
               <div>
@@ -180,8 +170,8 @@
               </div>
             </div>
 
-            <div class="p-5 rounded-2xl bg-dobi-card border border-white/10 flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-dobi-orange flex items-center justify-center text-black shrink-0">
+            <div data-motion="fade-up" data-delay="0.35" data-tilt class="spotlight-card p-5 rounded-2xl glass-panel flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-dobi-orange flex items-center justify-center text-black shrink-0 shadow-lg shadow-dobi-orange/25">
                 <i data-lucide="store" class="w-5 h-5"></i>
               </div>
               <div>
@@ -190,7 +180,7 @@
               </div>
             </div>
 
-            <div class="p-5 rounded-2xl bg-gradient-to-br from-dobi-orange to-amber-600 text-black flex items-center">
+            <div data-motion="fade-up" data-delay="0.4" class="p-5 rounded-2xl btn-orange text-black flex items-center">
               <p class="font-display font-bold text-sm sm:text-base leading-snug">
                 Te acompañamos de la estrategia a la ejecución
               </p>
@@ -199,21 +189,19 @@
         </div>
 
         <!-- Right: Ecosystem Visual Card -->
-        <div class="lg:col-span-5">
-          <div class="rounded-3xl bg-dobi-card border border-white/10 p-8 text-center relative overflow-hidden">
-            <div class="relative mx-auto w-64 h-64 flex items-center justify-center">
-              <!-- Outer dashed orbit -->
-              <div class="absolute inset-2 rounded-full border border-dashed border-dobi-orange/40"></div>
-              <div class="absolute inset-8 rounded-full border border-white/10"></div>
-              <!-- Center Planet: TU MARCA -->
-              <div class="w-32 h-32 rounded-full bg-gradient-to-br from-dobi-amber via-dobi-orange to-amber-700 flex items-center justify-center text-black font-display font-bold text-lg shadow-[0_0_50px_rgba(245,130,32,0.45)]">
+        <div data-motion="scale-in" data-delay="0.2" class="lg:col-span-5">
+          <div class="rounded-3xl glass-panel-orange p-8 text-center relative overflow-hidden">
+            <div class="relative mx-auto w-64 h-64 flex items-center justify-center animate-float">
+              <div class="absolute inset-2 rounded-full border border-dashed border-dobi-orange/50"></div>
+              <div class="absolute inset-8 rounded-full border border-white/15"></div>
+              <div class="w-32 h-32 rounded-full orbital-planet flex items-center justify-center text-black font-display font-bold text-lg">
                 TU<br/>MARCA
               </div>
             </div>
             <h3 class="font-display text-xl font-bold text-white mt-4">
               Un ecosistema de marketing integrado
             </h3>
-            <p class="text-xs sm:text-sm text-zinc-400 mt-2">
+            <p class="text-xs sm:text-sm text-zinc-300 mt-2">
               Estrategia, investigación, marca y punto de venta trabajando hacia un mismo objetivo.
             </p>
           </div>
@@ -223,16 +211,16 @@
   </section>
 
   <!-- FRENTE 02: ESTRATEGIA COMERCIAL (PDF Page 6) -->
-  <section id="comercial" class="py-16 sm:py-24">
+  <section id="comercial" class="relative z-10 py-16 sm:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
         <!-- Left Photo from Page 6 -->
-        <div class="lg:col-span-5">
-          <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+        <div data-motion="scale-in" class="lg:col-span-5">
+          <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
             <img
               src="assets/img/comercial-training.jpg"
               alt="Formación de equipos comerciales"
-              class="w-full h-[460px] sm:h-[540px] object-cover"
+              class="w-full h-[460px] sm:h-[540px] object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-6">
               <span class="font-display font-semibold text-sm text-white">Formación y estructuración de equipos comerciales</span>
@@ -242,42 +230,42 @@
 
         <!-- Right: 7 Numbered Solutions -->
         <div class="lg:col-span-7 space-y-6">
-          <div>
+          <div data-motion="fade-up">
             <p class="text-xs uppercase tracking-[0.25em] text-dobi-orange font-semibold mb-2">
               02 · ESTRATEGIA COMERCIAL
             </p>
             <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">
-              Una ruta de mercado y ejecución comercial exitosa
+              Una ruta de mercado y ejecución <span class="text-gradient-orange">comercial exitosa</span>
             </h2>
           </div>
 
           <div class="space-y-3">
-            <div class="p-4 rounded-xl bg-dobi-card border border-white/10 flex items-center gap-4">
+            <div data-motion="fade-up" data-delay="0.05" class="spotlight-card p-4 rounded-xl glass-panel flex items-center gap-4">
               <span class="w-9 h-9 rounded-full bg-dobi-orange text-black font-display font-bold text-sm flex items-center justify-center shrink-0">1</span>
               <span class="text-sm sm:text-base text-zinc-100 font-medium">Mentoring comercial</span>
             </div>
 
-            <div class="p-4 rounded-xl bg-dobi-card border border-white/10 flex items-center gap-4">
+            <div data-motion="fade-up" data-delay="0.1" class="spotlight-card p-4 rounded-xl glass-panel flex items-center gap-4">
               <span class="w-9 h-9 rounded-full bg-dobi-orange text-black font-display font-bold text-sm flex items-center justify-center shrink-0">2</span>
               <span class="text-sm sm:text-base text-zinc-100 font-medium">Juntas directivas con perspectiva comercial y de marketing</span>
             </div>
 
-            <div class="p-4 rounded-xl bg-dobi-card border border-white/10 flex items-center gap-4">
+            <div data-motion="fade-up" data-delay="0.15" class="spotlight-card p-4 rounded-xl glass-panel flex items-center gap-4">
               <span class="w-9 h-9 rounded-full bg-dobi-orange text-black font-display font-bold text-sm flex items-center justify-center shrink-0">3</span>
               <span class="text-sm sm:text-base text-zinc-100 font-medium">Estructuración y formación de equipos comerciales</span>
             </div>
 
-            <div class="p-4 rounded-xl bg-dobi-card border border-white/10 flex items-center gap-4">
+            <div data-motion="fade-up" data-delay="0.2" class="spotlight-card p-4 rounded-xl glass-panel flex items-center gap-4">
               <span class="w-9 h-9 rounded-full bg-dobi-orange text-black font-display font-bold text-sm flex items-center justify-center shrink-0">4</span>
               <span class="text-sm sm:text-base text-zinc-100 font-medium">Auditoría comercial</span>
             </div>
 
-            <div class="p-4 rounded-xl bg-dobi-card border border-white/10 flex items-center gap-4">
+            <div data-motion="fade-up" data-delay="0.25" class="spotlight-card p-4 rounded-xl glass-panel flex items-center gap-4">
               <span class="w-9 h-9 rounded-full bg-dobi-orange text-black font-display font-bold text-sm flex items-center justify-center shrink-0">5</span>
               <span class="text-sm sm:text-base text-zinc-100 font-medium">Desarrollo de habilidades de equipos de ventas</span>
             </div>
 
-            <div class="p-4 rounded-xl bg-dobi-card border border-dobi-orange/40 flex items-center justify-between gap-4">
+            <div data-motion="fade-up" data-delay="0.3" class="spotlight-card p-4 rounded-xl glass-panel-orange flex items-center justify-between gap-4">
               <div class="flex items-center gap-4">
                 <span class="w-9 h-9 rounded-full bg-dobi-orange text-black font-display font-bold text-sm flex items-center justify-center shrink-0">6</span>
                 <span class="text-sm sm:text-base text-white font-medium">Entrenamiento en ventas basado en Inteligencia Artificial</span>
@@ -285,7 +273,7 @@
               <span class="px-3 py-1 rounded-full bg-dobi-orange text-black font-display font-bold text-xs shrink-0">IA</span>
             </div>
 
-            <div class="p-4 rounded-xl bg-dobi-card border border-dobi-orange/40 flex items-center justify-between gap-4">
+            <div data-motion="fade-up" data-delay="0.35" class="spotlight-card p-4 rounded-xl glass-panel-orange flex items-center justify-between gap-4">
               <div class="flex items-center gap-4">
                 <span class="w-9 h-9 rounded-full bg-dobi-orange text-black font-display font-bold text-sm flex items-center justify-center shrink-0">7</span>
                 <span class="text-sm sm:text-base text-white font-medium">Business Intelligence y dashboards comerciales</span>
@@ -294,10 +282,10 @@
             </div>
           </div>
 
-          <div class="pt-4">
+          <div data-motion="fade-up" data-delay="0.4" class="pt-4">
             <a
               href="contacto.html"
-              class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-dobi-orange hover:bg-dobi-amber text-black font-bold text-sm transition-all"
+              class="btn-orange inline-flex items-center gap-2 px-7 py-4 rounded-full text-black font-bold text-sm"
             >
               <span>Solicitar diagnóstico para mi empresa</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -309,7 +297,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-[#070709] border-t border-white/10 py-8">
+  <footer class="relative z-10 bg-[#050508] border-t border-white/10 py-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-zinc-400">
       <a href="test.html" class="flex items-center">
         <img src="assets/img/logo-dobi.png" alt="dobi · Creadores de Valor" class="h-8 w-auto object-contain" />
@@ -326,6 +314,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/motion.js"></script>
   <script>lucide.createIcons();</script>
 </body>
 </html>

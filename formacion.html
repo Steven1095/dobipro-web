@@ -5,71 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Formación · Talleres y Capacitaciones | dobi · Creadores de Valor</title>
   <meta name="description" content="Desarrollamos las habilidades de tu equipo para el éxito comercial: servicio al cliente, CX, cierre de ventas, negociación estratégica y liderazgo." />
-  <meta name="theme-color" content="#0B0B0E" />
+  <meta name="theme-color" content="#07070B" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            display: ['"Space Grotesk"', 'sans-serif'],
-          },
-          colors: {
-            dobi: {
-              orange: '#F58220',
-              amber: '#FF9F38',
-              dark: '#0B0B0E',
-              card: '#181920',
-            }
-          }
-        }
-      }
-    };
-  </script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-[#0B0B0E] text-[#F4F4F6] antialiased selection:bg-dobi-orange selection:text-black">
+<body class="cosmic-bg text-[#F4F4F6] antialiased selection:bg-dobi-orange selection:text-black">
+
+  <!-- Decorative Orbital Rings -->
+  <div class="pointer-events-none fixed inset-0 overflow-hidden z-0 opacity-60">
+    <svg class="absolute -right-24 top-10 w-[850px] h-[850px] text-dobi-orange/15 animate-float" viewBox="0 0 800 800" fill="none">
+      <ellipse cx="400" cy="400" rx="370" ry="140" transform="rotate(-22 400 400)" stroke="#F58220" stroke-opacity="0.22" stroke-width="1.4" />
+      <ellipse cx="400" cy="400" rx="310" ry="110" transform="rotate(-15 400 400)" stroke="#FF9F38" stroke-opacity="0.18" stroke-width="1" stroke-dasharray="6 8" />
+    </svg>
+  </div>
 
   <!-- HEADER / NAVIGATION -->
-  <header class="sticky top-0 z-50 border-b border-white/10 bg-[#0B0B0E]/90 backdrop-blur-xl">
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-[#07070B]/85 backdrop-blur-xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-      <a href="test.html" class="shrink-0 flex items-center">
-        <img src="assets/img/logo-dobi.png" alt="dobi · Creadores de Valor" class="h-10 sm:h-11 w-auto object-contain" />
+      <a href="test.html" class="shrink-0 flex items-center group">
+        <img src="assets/img/logo-dobi.png" alt="dobi · Creadores de Valor" class="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
       </a>
 
       <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
-        <a href="test.html" class="text-zinc-300 hover:text-white transition-colors">Inicio</a>
-        <a href="consultoria.html" class="text-zinc-300 hover:text-white transition-colors">Consultoría</a>
+        <a href="test.html" class="text-zinc-300 hover:text-dobi-orange transition-colors">Inicio</a>
+        <a href="consultoria.html" class="text-zinc-300 hover:text-dobi-orange transition-colors">Consultoría</a>
         <a href="formacion.html" class="text-dobi-orange font-semibold">Formación</a>
-        <a href="conferencias.html" class="text-zinc-300 hover:text-white transition-colors">Conferencias</a>
-        <a href="nosotros.html" class="text-zinc-300 hover:text-white transition-colors">Nosotros</a>
-        <a href="contacto.html" class="text-zinc-300 hover:text-white transition-colors">Contacto</a>
+        <a href="conferencias.html" class="text-zinc-300 hover:text-dobi-orange transition-colors">Conferencias</a>
+        <a href="nosotros.html" class="text-zinc-300 hover:text-dobi-orange transition-colors">Nosotros</a>
+        <a href="contacto.html" class="text-zinc-300 hover:text-dobi-orange transition-colors">Contacto</a>
       </nav>
 
       <div class="flex items-center gap-3">
         <a
           href="contacto.html"
-          class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-dobi-orange hover:bg-dobi-amber text-black font-semibold text-xs sm:text-sm transition-all"
+          class="btn-orange inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-black font-bold text-xs sm:text-sm"
         >
-          Agenda una conversación
+          <span>Agenda una conversación</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
         </a>
         <button
           onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
           aria-label="Abrir menú"
-          class="lg:hidden p-2.5 rounded-lg bg-white/5 border border-white/10 text-zinc-200 hover:text-white"
+          class="lg:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-zinc-200 hover:text-white"
         >
           <i data-lucide="menu" class="w-5 h-5"></i>
         </button>
       </div>
     </div>
 
-    <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 bg-[#0F1015] px-4 py-4 space-y-2">
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 bg-[#0F1015]/95 backdrop-blur-xl px-4 py-4 space-y-2">
       <a href="test.html" class="block px-3 py-2 rounded-lg text-zinc-300 hover:bg-white/5 text-sm">Inicio</a>
       <a href="consultoria.html" class="block px-3 py-2 rounded-lg text-zinc-300 hover:bg-white/5 text-sm">Consultoría</a>
       <a href="formacion.html" class="block px-3 py-2 rounded-lg bg-dobi-orange/15 text-dobi-orange font-semibold text-sm">Formación</a>
@@ -80,63 +69,64 @@
   </header>
 
   <!-- MAIN CONTENT (PDF Page 7) -->
-  <section class="py-16 sm:py-24">
+  <section class="relative z-10 py-16 sm:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-12 gap-12 items-start">
         <!-- Left Column: Programs & Tailor-Made Box -->
         <div class="lg:col-span-7 space-y-8">
           <div>
-            <p class="text-xs uppercase tracking-[0.25em] text-dobi-orange font-semibold mb-2">
+            <div data-motion="fade-up" class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-dobi-orange/15 border border-dobi-orange/35 text-dobi-amber text-xs font-semibold uppercase tracking-[0.22em] mb-4">
+              <span class="w-2 h-2 rounded-full bg-dobi-orange animate-ping"></span>
               03 · TALLERES Y CAPACITACIONES
-            </p>
-            <h1 class="font-display text-3xl sm:text-5xl font-bold text-white leading-tight">
-              Desarrollamos las <span class="text-dobi-orange">habilidades</span> de tu equipo
+            </div>
+            <h1 data-motion="fade-up" data-delay="0.1" class="font-display text-3xl sm:text-5xl font-bold text-white leading-tight">
+              Desarrollamos las <span class="text-gradient-orange">habilidades</span> de tu equipo
             </h1>
-            <p class="text-base text-zinc-400 mt-3 max-w-2xl">
+            <p data-motion="fade-up" data-delay="0.2" class="text-base text-zinc-300 mt-3 max-w-2xl font-light leading-relaxed">
               Programas prácticos de formación comercial, servicio y liderazgo diseñados para transformar el desempeño diario de tus equipos en resultados tangibles.
             </p>
           </div>
 
-          <!-- 7 Programs Pills/Cards (Exact match to Page 7 of PDF) -->
+          <!-- 7 Programs Pills/Cards -->
           <div class="grid sm:grid-cols-2 gap-4">
-            <div class="p-5 rounded-full bg-dobi-card border border-white/10 hover:border-dobi-orange/50 flex items-center gap-3.5 transition-all">
+            <div data-motion="fade-up" data-delay="0.05" data-tilt class="spotlight-card p-5 rounded-2xl glass-panel flex items-center gap-3.5">
               <i data-lucide="check" class="w-5 h-5 text-dobi-orange stroke-[3] shrink-0"></i>
               <span class="font-medium text-sm sm:text-base text-zinc-100">Servicio al cliente</span>
             </div>
 
-            <div class="p-5 rounded-full bg-dobi-card border border-white/10 hover:border-dobi-orange/50 flex items-center gap-3.5 transition-all">
+            <div data-motion="fade-up" data-delay="0.1" data-tilt class="spotlight-card p-5 rounded-2xl glass-panel flex items-center gap-3.5">
               <i data-lucide="check" class="w-5 h-5 text-dobi-orange stroke-[3] shrink-0"></i>
               <span class="font-medium text-sm sm:text-base text-zinc-100">Empatía y comunicación con el cliente</span>
             </div>
 
-            <div class="p-5 rounded-full bg-dobi-card border border-white/10 hover:border-dobi-orange/50 flex items-center gap-3.5 transition-all">
+            <div data-motion="fade-up" data-delay="0.15" data-tilt class="spotlight-card p-5 rounded-2xl glass-panel flex items-center gap-3.5">
               <i data-lucide="check" class="w-5 h-5 text-dobi-orange stroke-[3] shrink-0"></i>
               <span class="font-medium text-sm sm:text-base text-zinc-100">Customer Experience</span>
             </div>
 
-            <div class="p-5 rounded-full bg-dobi-card border border-white/10 hover:border-dobi-orange/50 flex items-center gap-3.5 transition-all">
+            <div data-motion="fade-up" data-delay="0.2" data-tilt class="spotlight-card p-5 rounded-2xl glass-panel flex items-center gap-3.5">
               <i data-lucide="check" class="w-5 h-5 text-dobi-orange stroke-[3] shrink-0"></i>
               <span class="font-medium text-sm sm:text-base text-zinc-100">Habilidades gerenciales</span>
             </div>
 
-            <div class="p-5 rounded-full bg-dobi-card border border-white/10 hover:border-dobi-orange/50 flex items-center gap-3.5 transition-all">
+            <div data-motion="fade-up" data-delay="0.25" data-tilt class="spotlight-card p-5 rounded-2xl glass-panel flex items-center gap-3.5">
               <i data-lucide="check" class="w-5 h-5 text-dobi-orange stroke-[3] shrink-0"></i>
               <span class="font-medium text-sm sm:text-base text-zinc-100">Manejo de objeciones y cierre de ventas</span>
             </div>
 
-            <div class="p-5 rounded-full bg-dobi-card border border-white/10 hover:border-dobi-orange/50 flex items-center gap-3.5 transition-all">
+            <div data-motion="fade-up" data-delay="0.3" data-tilt class="spotlight-card p-5 rounded-2xl glass-panel flex items-center gap-3.5">
               <i data-lucide="check" class="w-5 h-5 text-dobi-orange stroke-[3] shrink-0"></i>
               <span class="font-medium text-sm sm:text-base text-zinc-100">Desarrollo de propuesta de valor</span>
             </div>
 
-            <div class="p-5 rounded-full bg-dobi-card border border-white/10 hover:border-dobi-orange/50 flex items-center gap-3.5 transition-all sm:col-span-2">
+            <div data-motion="fade-up" data-delay="0.35" data-tilt class="spotlight-card p-5 rounded-2xl glass-panel flex items-center gap-3.5 sm:col-span-2">
               <i data-lucide="check" class="w-5 h-5 text-dobi-orange stroke-[3] shrink-0"></i>
               <span class="font-medium text-sm sm:text-base text-zinc-100">Negociación estratégica</span>
             </div>
           </div>
 
           <!-- Orange Tailor-Made Callout from Page 7 -->
-          <div class="rounded-3xl bg-dobi-orange text-black p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-xl">
+          <div data-motion="scale-in" data-delay="0.2" class="rounded-3xl bg-gradient-to-r from-[#F58220] via-[#FF942E] to-[#DF6806] text-black p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-2xl">
             <div class="flex items-start sm:items-center gap-5">
               <div class="w-14 h-14 rounded-full bg-black text-white flex items-center justify-center shrink-0">
                 <i data-lucide="puzzle" class="w-7 h-7"></i>
@@ -152,7 +142,7 @@
             </div>
             <a
               href="contacto.html"
-              class="shrink-0 px-6 py-3.5 rounded-xl bg-black hover:bg-zinc-900 text-white font-bold text-xs sm:text-sm transition-all"
+              class="shrink-0 px-6 py-3.5 rounded-full bg-black hover:bg-zinc-900 text-white font-bold text-xs sm:text-sm transition-all"
             >
               Solicitar taller
             </a>
@@ -161,18 +151,18 @@
 
         <!-- Right Column: 2 Real Workshop Photos from Page 7 -->
         <div class="lg:col-span-5 space-y-5">
-          <div class="rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+          <div data-motion="scale-in" data-delay="0.15" class="rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
             <img
               src="assets/img/gallery/taller-mesa.jpg"
               alt="Workshop corporativo in-company dobi"
-              class="w-full h-64 sm:h-72 object-cover"
+              class="w-full h-64 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </div>
-          <div class="rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+          <div data-motion="scale-in" data-delay="0.25" class="rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
             <img
               src="assets/img/gallery/taller-camara-armenia.jpg"
               alt="Capacitación empresarial dobi"
-              class="w-full h-64 sm:h-72 object-cover"
+              class="w-full h-64 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </div>
         </div>
@@ -181,7 +171,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-[#070709] border-t border-white/10 py-8">
+  <footer class="relative z-10 bg-[#050508] border-t border-white/10 py-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-zinc-400">
       <a href="test.html" class="flex items-center">
         <img src="assets/img/logo-dobi.png" alt="dobi · Creadores de Valor" class="h-8 w-auto object-contain" />
@@ -198,6 +188,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/motion.js"></script>
   <script>lucide.createIcons();</script>
 </body>
 </html>

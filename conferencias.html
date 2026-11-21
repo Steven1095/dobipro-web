@@ -5,80 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Conferencias que Inspiran y Movilizan | dobi · Creadores de Valor</title>
   <meta name="description" content="Conferencias corporativas de Mario Duque sobre servicio al cliente, liderazgo gerencial, pensamiento estratégico y foco comercial en toda LATAM." />
-  <meta name="theme-color" content="#0B0B0E" />
+  <meta name="theme-color" content="#07070B" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            display: ['"Space Grotesk"', 'sans-serif'],
-          },
-          colors: {
-            dobi: {
-              orange: '#F58220',
-              amber: '#FF9F38',
-              dark: '#0B0B0E',
-              card: '#181920',
-            }
-          }
-        }
-      }
-    };
-  </script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
   <script src="https://unpkg.com/lucide@latest"></script>
-  <style>
-    .stage-bg {
-      background-image:
-        linear-gradient(180deg, rgba(11, 11, 14, 0.88) 0%, rgba(11, 11, 14, 0.82) 50%, rgba(11, 11, 14, 0.98) 100%),
-        url('assets/img/hero-stage.jpg');
-      background-size: cover;
-      background-position: center;
-    }
-  </style>
 </head>
-<body class="bg-[#0B0B0E] text-[#F4F4F6] antialiased selection:bg-dobi-orange selection:text-black">
+<body class="cosmic-bg text-[#F4F4F6] antialiased selection:bg-dobi-orange selection:text-black">
 
   <!-- HEADER / NAVIGATION -->
-  <header class="sticky top-0 z-50 border-b border-white/10 bg-[#0B0B0E]/90 backdrop-blur-xl">
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-[#07070B]/85 backdrop-blur-xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-      <a href="test.html" class="shrink-0 flex items-center">
-        <img src="assets/img/logo-dobi.png" alt="dobi · Creadores de Valor" class="h-10 sm:h-11 w-auto object-contain" />
+      <a href="test.html" class="shrink-0 flex items-center group">
+        <img src="assets/img/logo-dobi.png" alt="dobi · Creadores de Valor" class="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
       </a>
 
       <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
-        <a href="test.html" class="text-zinc-300 hover:text-white transition-colors">Inicio</a>
-        <a href="consultoria.html" class="text-zinc-300 hover:text-white transition-colors">Consultoría</a>
-        <a href="formacion.html" class="text-zinc-300 hover:text-white transition-colors">Formación</a>
+        <a href="test.html" class="text-zinc-300 hover:text-dobi-orange transition-colors">Inicio</a>
+        <a href="consultoria.html" class="text-zinc-300 hover:text-dobi-orange transition-colors">Consultoría</a>
+        <a href="formacion.html" class="text-zinc-300 hover:text-dobi-orange transition-colors">Formación</a>
         <a href="conferencias.html" class="text-dobi-orange font-semibold">Conferencias</a>
-        <a href="nosotros.html" class="text-zinc-300 hover:text-white transition-colors">Nosotros</a>
-        <a href="contacto.html" class="text-zinc-300 hover:text-white transition-colors">Contacto</a>
+        <a href="nosotros.html" class="text-zinc-300 hover:text-dobi-orange transition-colors">Nosotros</a>
+        <a href="contacto.html" class="text-zinc-300 hover:text-dobi-orange transition-colors">Contacto</a>
       </nav>
 
       <div class="flex items-center gap-3">
         <a
           href="contacto.html"
-          class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-dobi-orange hover:bg-dobi-amber text-black font-semibold text-xs sm:text-sm transition-all"
+          class="btn-orange inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-black font-bold text-xs sm:text-sm"
         >
-          Agenda una conversación
+          <span>Agenda una conversación</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
         </a>
         <button
           onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
           aria-label="Abrir menú"
-          class="lg:hidden p-2.5 rounded-lg bg-white/5 border border-white/10 text-zinc-200 hover:text-white"
+          class="lg:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-zinc-200 hover:text-white"
         >
           <i data-lucide="menu" class="w-5 h-5"></i>
         </button>
       </div>
     </div>
 
-    <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 bg-[#0F1015] px-4 py-4 space-y-2">
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 bg-[#0F1015]/95 backdrop-blur-xl px-4 py-4 space-y-2">
       <a href="test.html" class="block px-3 py-2 rounded-lg text-zinc-300 hover:bg-white/5 text-sm">Inicio</a>
       <a href="consultoria.html" class="block px-3 py-2 rounded-lg text-zinc-300 hover:bg-white/5 text-sm">Consultoría</a>
       <a href="formacion.html" class="block px-3 py-2 rounded-lg text-zinc-300 hover:bg-white/5 text-sm">Formación</a>
@@ -89,25 +61,25 @@
   </header>
 
   <!-- 04 · CONFERENCIAS (PDF Page 8) -->
-  <section class="stage-bg py-16 sm:py-24 border-b border-white/10">
+  <section class="stage-bg relative z-10 py-16 sm:py-24 border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       <div class="max-w-3xl">
-        <p class="text-xs uppercase tracking-[0.25em] text-dobi-orange font-semibold mb-2">
+        <div data-motion="fade-up" class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-dobi-orange/15 border border-dobi-orange/35 text-dobi-amber text-xs font-semibold uppercase tracking-[0.22em] mb-4">
+          <span class="w-2 h-2 rounded-full bg-dobi-orange animate-ping"></span>
           04 · CONFERENCIAS
-        </p>
-        <h1 class="font-display text-3xl sm:text-5xl font-bold text-white leading-tight">
-          Conferencias que <span class="text-dobi-orange">inspiran</span> y movilizan
+        </div>
+        <h1 data-motion="fade-up" data-delay="0.1" class="font-display text-3xl sm:text-5xl font-bold text-white leading-tight">
+          Conferencias que <span class="text-gradient-orange">inspiran</span> y movilizan
         </h1>
-        <p class="text-base sm:text-lg text-zinc-300 mt-3">
+        <p data-motion="fade-up" data-delay="0.2" class="text-base sm:text-lg text-zinc-300 mt-3 font-light">
           Mensajes de alto impacto para convenciones comerciales, congresos, summits y encuentros corporativos en cualquier ciudad de LATAM.
         </p>
       </div>
 
-      <!-- 4 Keynote Cards (Exact match to Page 8 of PDF) -->
+      <!-- 4 Keynote Cards with 3D Spotlight -->
       <div class="grid md:grid-cols-2 gap-6">
-        <!-- 1. ¡Conecta con tu cliente! -->
-        <div class="rounded-3xl bg-[#14151B]/90 backdrop-blur-md border border-white/15 p-7 sm:p-8 flex items-start gap-5 hover:border-dobi-orange/60 transition-all">
-          <div class="w-14 h-14 rounded-full bg-dobi-orange flex items-center justify-center text-black shrink-0 shadow-lg shadow-dobi-orange/25">
+        <div data-motion="fade-up" data-delay="0.05" data-tilt class="spotlight-card rounded-3xl glass-panel p-7 sm:p-8 flex items-start gap-5">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-dobi-amber to-dobi-orange flex items-center justify-center text-black shrink-0 shadow-lg shadow-dobi-orange/30">
             <i data-lucide="handshake" class="w-7 h-7"></i>
           </div>
           <div class="space-y-2">
@@ -123,9 +95,8 @@
           </div>
         </div>
 
-        <!-- 2. Empieza por gerenciarte -->
-        <div class="rounded-3xl bg-[#14151B]/90 backdrop-blur-md border border-white/15 p-7 sm:p-8 flex items-start gap-5 hover:border-dobi-orange/60 transition-all">
-          <div class="w-14 h-14 rounded-full bg-dobi-orange flex items-center justify-center text-black shrink-0 shadow-lg shadow-dobi-orange/25">
+        <div data-motion="fade-up" data-delay="0.15" data-tilt class="spotlight-card rounded-3xl glass-panel p-7 sm:p-8 flex items-start gap-5">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-dobi-amber to-dobi-orange flex items-center justify-center text-black shrink-0 shadow-lg shadow-dobi-orange/30">
             <i data-lucide="lightbulb" class="w-7 h-7"></i>
           </div>
           <div class="space-y-2">
@@ -141,9 +112,8 @@
           </div>
         </div>
 
-        <!-- 3. Pensamiento estratégico para el éxito comercial -->
-        <div class="rounded-3xl bg-[#14151B]/90 backdrop-blur-md border border-white/15 p-7 sm:p-8 flex items-start gap-5 hover:border-dobi-orange/60 transition-all">
-          <div class="w-14 h-14 rounded-full bg-dobi-orange flex items-center justify-center text-black shrink-0 shadow-lg shadow-dobi-orange/25">
+        <div data-motion="fade-up" data-delay="0.25" data-tilt class="spotlight-card rounded-3xl glass-panel p-7 sm:p-8 flex items-start gap-5">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-dobi-amber to-dobi-orange flex items-center justify-center text-black shrink-0 shadow-lg shadow-dobi-orange/30">
             <i data-lucide="route" class="w-7 h-7"></i>
           </div>
           <div class="space-y-2">
@@ -159,9 +129,8 @@
           </div>
         </div>
 
-        <!-- 4. ¡Enfócate! -->
-        <div class="rounded-3xl bg-[#14151B]/90 backdrop-blur-md border border-white/15 p-7 sm:p-8 flex items-start gap-5 hover:border-dobi-orange/60 transition-all">
-          <div class="w-14 h-14 rounded-full bg-dobi-orange flex items-center justify-center text-black shrink-0 shadow-lg shadow-dobi-orange/25">
+        <div data-motion="fade-up" data-delay="0.35" data-tilt class="spotlight-card rounded-3xl glass-panel p-7 sm:p-8 flex items-start gap-5">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-dobi-amber to-dobi-orange flex items-center justify-center text-black shrink-0 shadow-lg shadow-dobi-orange/30">
             <i data-lucide="zap" class="w-7 h-7"></i>
           </div>
           <div class="space-y-2">
@@ -181,20 +150,20 @@
   </section>
 
   <!-- EXPERIENCIA EN ESCENARIO (PDF Page 9) -->
-  <section class="py-16 sm:py-24">
+  <section class="relative z-10 py-16 sm:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div data-motion="fade-up" class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
           <p class="text-xs uppercase tracking-[0.25em] text-dobi-orange font-semibold mb-2">
             EXPERIENCIA EN ESCENARIO
           </p>
           <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">
-            Así se vive dobi en las organizaciones
+            Así se vive dobi en las <span class="text-gradient-orange">organizaciones</span>
           </h2>
         </div>
         <a
           href="contacto.html"
-          class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-dobi-orange hover:bg-dobi-amber text-black font-bold text-xs sm:text-sm transition-all shrink-0"
+          class="btn-orange inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-black font-bold text-xs sm:text-sm shrink-0"
         >
           <span>Reservar fecha de conferencia</span>
           <i data-lucide="calendar" class="w-4 h-4"></i>
@@ -203,8 +172,7 @@
 
       <!-- Exact 5-Photo Layout from Page 9 of PDF -->
       <div class="grid lg:grid-cols-12 gap-5">
-        <!-- Tall Left Photo: 5to Summit Internacional de GLP -->
-        <div class="lg:col-span-4 relative rounded-2xl overflow-hidden border border-white/10 group min-h-[360px]">
+        <div data-motion="fade-up" data-delay="0.05" class="lg:col-span-4 relative rounded-3xl overflow-hidden border border-white/15 group min-h-[360px] shadow-2xl">
           <img
             src="assets/img/gallery/summit-glp.jpg"
             alt="5to Summit Internacional de GLP · Agremgas"
@@ -217,9 +185,8 @@
           </div>
         </div>
 
-        <!-- Right 2x2 Grid (4 photos from Page 9) -->
         <div class="lg:col-span-8 grid sm:grid-cols-2 gap-5">
-          <div class="relative rounded-2xl overflow-hidden border border-white/10 group h-56 sm:h-64">
+          <div data-motion="fade-up" data-delay="0.1" class="relative rounded-2xl overflow-hidden border border-white/15 group h-56 sm:h-64 shadow-xl">
             <img
               src="assets/img/gallery/espiritu-servicio.jpg"
               alt="Espíritu de servicio"
@@ -230,7 +197,7 @@
             </div>
           </div>
 
-          <div class="relative rounded-2xl overflow-hidden border border-white/10 group h-56 sm:h-64">
+          <div data-motion="fade-up" data-delay="0.18" class="relative rounded-2xl overflow-hidden border border-white/15 group h-56 sm:h-64 shadow-xl">
             <img
               src="assets/img/gallery/copidrogas.jpg"
               alt="Copidrogas / El cliente en el centro de la estrategia"
@@ -241,7 +208,7 @@
             </div>
           </div>
 
-          <div class="relative rounded-2xl overflow-hidden border border-white/10 group h-56 sm:h-64">
+          <div data-motion="fade-up" data-delay="0.25" class="relative rounded-2xl overflow-hidden border border-white/15 group h-56 sm:h-64 shadow-xl">
             <img
               src="assets/img/gallery/aguas-manizales.jpg"
               alt="Cultura de servicio - Aguas de Manizales"
@@ -252,7 +219,7 @@
             </div>
           </div>
 
-          <div class="relative rounded-2xl overflow-hidden border border-white/10 group h-56 sm:h-64">
+          <div data-motion="fade-up" data-delay="0.32" class="relative rounded-2xl overflow-hidden border border-white/15 group h-56 sm:h-64 shadow-xl">
             <img
               src="assets/img/gallery/workshop-incauca.jpg"
               alt="Workshop – Incauca/Natusal"
@@ -268,7 +235,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-[#070709] border-t border-white/10 py-8">
+  <footer class="relative z-10 bg-[#050508] border-t border-white/10 py-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-zinc-400">
       <a href="test.html" class="flex items-center">
         <img src="assets/img/logo-dobi.png" alt="dobi · Creadores de Valor" class="h-8 w-auto object-contain" />
@@ -285,6 +252,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/motion.js"></script>
   <script>lucide.createIcons();</script>
 </body>
 </html>
